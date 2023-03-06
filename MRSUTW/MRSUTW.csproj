@@ -93,6 +93,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\avatar.svg" />
+    <Content Include="Images\light-cloud-mascot.svg" />
+    <Content Include="Images\light-message-mascot.svg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

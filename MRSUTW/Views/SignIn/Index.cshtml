@@ -7,239 +7,366 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
-    <Title>Login</Title>
-    <style>
+     <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+     <Title>Login</Title>
+     <style>
 
-        input:focus {
-            border: 2px solid #005393;
-        }
+          input:focus {
+               border: 2px solid #005393;
+          }
 
-        ::placeholder {
-            color: #90A4AE;
-        }
+          ::placeholder {
+               color: #90A4AE;
+          }
 
-        input:focus::placeholder {
-            color: transparent;
-        }
+          input:focus::placeholder {
+               color: transparent;
+          }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+          * {
+               box-sizing: border-box;
+               margin: 0;
+               padding: 0;
+          }
 
-        body {
-            width: 100vw;
-            height: 100vh;
-            text-align: center;
-            position: relative;
-            background-color: #DCE5F2;
-        }
+          body {
+               width: 100vw;
+               height: 100vh;
+               text-align: center;
+               position: relative;
+               background-color: #DCE5F2;
+          }
 
-        .login-page {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: relative;
-        }
+          .login-page {
+               width: 100%;
+               height: 100%;
+               overflow: hidden;
+               position: relative;
+          }
 
-        .login-page-container {
-            max-height: 80%;
-            max-width: 80%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 491px;
-            background: #DCE5F2;
-            box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-            min-width: 550px;
-            min-height: 480px;
-        }
+          .login-page-container {
+               max-height: 80%;
+               max-width: 80%;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               width: 800px;
+               height: 491px;
+               background: #DCE5F2;
+               box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
+               border-radius: 50px;
+               display: flex;
+               align-items: center;
+               gap: 20px;
+               padding: 20px;
+               min-width: 550px;
+               min-height: 480px;
+          }
 
-        .login-page-container-left {
-            background: #DCE5F2;
-            width: 349px;
-            height: 100%;
-            box-shadow: 1px 1px 2px rgba(242, 252, 255, 0.3), -1px -1px 2px rgba(198, 206, 218, 0.5), inset -5px 5px 10px rgba(198, 206, 218, 0.2), inset 5px -5px 10px rgba(198, 206, 218, 0.2), inset -5px -5px 10px rgba(242, 252, 255, 0.9), inset 5px 5px 13px rgba(198, 206, 218, 0.9);
-            border-radius: 35px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 55px;
-        }
+          .login-page-container-left {
+               background: #DCE5F2;
+               width: 349px;
+               height: 100%;
+               box-shadow: 1px 1px 2px rgba(242, 252, 255, 0.3), -1px -1px 2px rgba(198, 206, 218, 0.5), inset -5px 5px 10px rgba(198, 206, 218, 0.2), inset 5px -5px 10px rgba(198, 206, 218, 0.2), inset -5px -5px 10px rgba(242, 252, 255, 0.9), inset 5px 5px 13px rgba(198, 206, 218, 0.9);
+               border-radius: 35px;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               gap: 55px;
+          }
 
-        .login-page-container-left-avatar {
-            width: 200px;
-            height: 200px;
-            background: #DCE5F2;
-            box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
-            border-radius: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+          .login-page-container-left-avatar {
+               width: 200px;
+               height: 200px;
+               background: #DCE5F2;
+               box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
+               border-radius: 100%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+          }
 
-        .login-page-container-left-description {
-            background: #DCE5F2;
-            box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
-            border-radius: 50px;
-            padding: 16px 39px;
-        }
+          .login-page-container-left-description {
+               background: #DCE5F2;
+               box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
+               border-radius: 50px;
+               padding: 16px 39px;
+          }
 
-        .login-page-container-left-description-text {
-            font-family: 'IBM Plex Mono';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 30px;
-            line-height: 39px;
-            color: #005393;
-            text-shadow: -5px 5px 10px rgba(179, 179, 179, 0.2), 5px -5px 10px rgba(179, 179, 179, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(179, 179, 179, 0.9);
-        }
+          .login-page-container-left-description-text {
+               font-family: 'IBM Plex Mono';
+               font-style: normal;
+               font-weight: 700;
+               font-size: 30px;
+               line-height: 39px;
+               color: #005393;
+               text-shadow: -5px 5px 10px rgba(179, 179, 179, 0.2), 5px -5px 10px rgba(179, 179, 179, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(179, 179, 179, 0.9);
+          }
 
-        .login-page-container-right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            flex: 1;
-        }
+          .login-page-container-right {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: space-around;
+               flex: 1;
+          }
 
-        .login-page-container-right-title {
-            font-family: 'IBM Plex Mono';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 30px;
-            line-height: 39px;
-            color: #005393;
-            margin-bottom: 53px;
-        }
+          .login-page-container-right-title {
+               font-family: 'IBM Plex Mono';
+               font-style: normal;
+               font-weight: 600;
+               font-size: 30px;
+               line-height: 39px;
+               color: #005393;
+               margin-bottom: 53px;
+          }
 
-        .login-page-container-right-inputs {
-            flex-direction: column;
-            align-items: center;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
+          .login-page-container-right-inputs {
+               flex-direction: column;
+               align-items: center;
+               padding-left: 5px;
+               padding-right: 5px;
+          }
 
-        .login-page-container-right-inputs-item {
-            width: 100%;
-            max-width: 270px;
-            height: 52px;
-            box-sizing: border-box;
-            background: #DCE5F2;
-            box-shadow: 1px 1px 2px rgba(242, 252, 255, 0.3), -1px -1px 2px rgba(198, 206, 218, 0.5), inset -5px 5px 10px rgba(198, 206, 218, 0.2), inset 5px -5px 10px rgba(198, 206, 218, 0.2), inset -5px -5px 10px rgba(242, 252, 255, 0.9), inset 5px 5px 13px rgba(198, 206, 218, 0.9);
-            border-radius: 49px;
-            margin-block-end: 30px;
-            border: none;
-            outline: none;
-            padding-left: 33px;
-            padding-right: 33px;
-            font-family: 'IBM Plex Mono';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 21px;
-            letter-spacing: 1px;
-            color: #005393;
-        }
+          .login-page-container-right-inputs-item {
+               width: 100%;
+               max-width: 270px;
+               height: 52px;
+               box-sizing: border-box;
+               background: #DCE5F2;
+               box-shadow: 1px 1px 2px rgba(242, 252, 255, 0.3), -1px -1px 2px rgba(198, 206, 218, 0.5), inset -5px 5px 10px rgba(198, 206, 218, 0.2), inset 5px -5px 10px rgba(198, 206, 218, 0.2), inset -5px -5px 10px rgba(242, 252, 255, 0.9), inset 5px 5px 13px rgba(198, 206, 218, 0.9);
+               border-radius: 49px;
+               margin-block-end: 30px;
+               border: none;
+               outline: none;
+               padding-left: 33px;
+               padding-right: 33px;
+               font-family: 'IBM Plex Mono';
+               font-style: normal;
+               font-weight: 700;
+               font-size: 16px;
+               line-height: 21px;
+               letter-spacing: 1px;
+               color: #005393;
+          }
 
-            .login-page-container-right-inputs-item:last-of-type {
-                margin: 0;
-            }
+               .login-page-container-right-inputs-item:last-of-type {
+                    margin: 0;
+               }
 
-        .login-page-container-right-button {
-            margin-top: 48px;
-            margin-bottom: 40px;
-            background: #005393;
-            box-shadow: -5px 5px 10px rgba(179, 179, 179, 0.2), 5px -5px 10px rgba(179, 179, 179, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(179, 179, 179, 0.9), inset 0px 0px 10px 4px rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            width: 173px;
-            height: 47px;
-            padding: 8px;
-            font-family: 'IBM Plex Mono';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 24px;
-            line-height: 31px;
-            color: #DCE5F2;
-            cursor: pointer;
-        }
+          .login-page-container-right-button {
+               margin-top: 48px;
+               margin-bottom: 40px;
+               background: #005393;
+               box-shadow: -5px 5px 10px rgba(179, 179, 179, 0.2), 5px -5px 10px rgba(179, 179, 179, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(179, 179, 179, 0.9), inset 0px 0px 10px 4px rgba(255, 255, 255, 0.3);
+               border-radius: 50px;
+               width: 173px;
+               height: 47px;
+               padding: 8px;
+               font-family: 'IBM Plex Mono';
+               font-style: normal;
+               font-weight: 600;
+               font-size: 24px;
+               line-height: 31px;
+               color: #DCE5F2;
+               cursor: pointer;
+          }
 
-         .login-page-container-right-subbutton {
-              font-family: 'IBM Plex Mono';
-              font-style: normal;
-              font-weight: 600;
-              font-size: 18px;
-              line-height: 23px;
-              color: #005393;
-              cursor: pointer;
-              text-decoration: unset;
-         }
+          .login-page-container-right-subbutton {
+               font-family: 'IBM Plex Mono';
+               font-style: normal;
+               font-weight: 600;
+               font-size: 18px;
+               line-height: 23px;
+               color: #005393;
+               cursor: pointer;
+               text-decoration: unset;
+          }
 
-        .login-page-background-figure {
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            background: linear-gradient(135deg, #D1DAE6 0%, #E7F0FE 100%);
-            box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
-            border-radius: 100%;
-        }
-    </style>
+          .login-page-background-figure {
+               width: 200px;
+               height: 200px;
+               position: absolute;
+               background: linear-gradient(135deg, #D1DAE6 0%, #E7F0FE 100%);
+               box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
+               border-radius: 100%;
+          }
+
+          .mascota-container-fixed {
+               position: fixed;
+               bottom: 20px;
+               right: 20px;
+          }
+
+          .mascota-container-relative {
+               position: relative;
+               animation: mascota 2s ease-in-out 0s;
+               animation-fill-mode: forwards;
+               transform: scale(1);
+               opacity: 1;
+          }
+
+          .message-container {
+               position: absolute;
+               top: -105px;
+               right: -20px;
+               animation: message 1s ease-in-out 2s;
+               animation-fill-mode: forwards;
+               opacity: 0;
+          }
+
+          .message-text {
+               margin: 0;
+               padding: 0;
+               position: absolute;
+               top: 45%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               font-weight: 700;
+               font-size: 13px;
+               line-height: 20px;
+               color: #005393;
+               overflow: hidden;
+               border-right: 0.1em solid #005393;
+               white-space: nowrap;
+               margin: 0 auto;
+               letter-spacing: 0.15em;
+               width: 0;
+               animation: typing 1.5s steps(9, end) 3s, blink-caret 0.25s step-end infinite 3s;
+               animation-fill-mode: forwards;
+          }
+
+          @@keyframes mascota {
+               0% {
+                    opacity: 0;
+                    transform: scale(0);
+               }
+
+               20% {
+                    opacity: 0;
+               }
+
+               30% {
+                    opacity: 1;
+                    transform: scale(1);
+               }
+
+               40% {
+                    transform: scale(0.9);
+               }
+
+               60% {
+                    transform: scale(1);
+               }
+
+               80% {
+                    transform: scale(0.9);
+               }
+
+               100% {
+                    transform: scale(1);
+               }
+          }
+
+          @@keyframes message {
+               0% {
+                    opacity: 0;
+               }
+
+               50% {
+                    opacity: 0;
+               }
+
+               100% {
+                    opacity: 1;
+               }
+          }
+
+          @@keyframes typing {
+               0% {
+                    width: 0;
+               }
+
+               40% {
+                    width: 34px;
+               }
+
+               50% {
+                    width: 18px;
+               }
+
+               100% {
+                    width: 68px;
+               }
+          }
+
+          @@keyframes blink-caret {
+               from,
+               to {
+                    border-color: transparent;
+               }
+
+               50% {
+                    border-color: #005393;
+               }
+          }
+     </style>
 </head>
 <body>
-    <div class="login-page">
-        <div class="login-page-container">
-            <div class="login-page-container-left">
-                <div class="login-page-container-left-avatar">
-                    <img src="~/Images/avatar.svg">
-                </div>
-                <div class="login-page-container-left-description">
-                     <div class="login-page-container-left-description-text">
-                          Hi, @Html.DisplayFor(u => u.Username)!
-                     </div>
-                </div>
+     <div class="login-page">
+          <div class="login-page-container">
+               <div class="login-page-container-left">
+                    <div class="login-page-container-left-avatar">
+                         <img src="~/Images/avatar.svg">
+                    </div>
+                    <div class="login-page-container-left-description">
+                         <div class="login-page-container-left-description-text">
+                              Hi, @Html.DisplayFor(u => u.Username)!
+                         </div>
+                    </div>
 
-            </div>
-            <div class="login-page-container-right">
-                <div class="login-page-container-right-title">
-                    Please Login
-                </div>
-                <div class="login-page-container-right-inputs">
-                    <input class="login-page-container-right-inputs-item"
-                           placeholder="Username"
-                           value="@Html.DisplayFor(u => u.Username)"
-                    />
-                    <input class="login-page-container-right-inputs-item"
-                           placeholder="Password"
-                           type="password"
-                           value="@Html.DisplayFor(u => u.Password)"
-                    />
-                </div>
-                <div class="login-page-container-right-button">
-                    Login
-                </div>
-                <a class="login-page-container-right-subbutton" href="@Url.Action("Index","SingUp")">
-                    Or register now →
-                </a>
-            </div>
-        </div>
+               </div>
+               <div class="login-page-container-right">
+                    <div class="login-page-container-right-title">
+                         Please Login
+                    </div>
+                    <div class="login-page-container-right-inputs">
+                         <input class="login-page-container-right-inputs-item"
+                                placeholder="Username"
+                                value="@Html.DisplayFor(u => u.Username)" />
+                         <input class="login-page-container-right-inputs-item"
+                                placeholder="Password"
+                                type="password"
+                                value="@Html.DisplayFor(u => u.Password)" />
+                    </div>
+                    <div class="login-page-container-right-button">
+                         Login
+                    </div>
+                    <a class="login-page-container-right-subbutton" href="@Url.Action("Index","SingUp")">
+                         Or register now →
+                    </a>
+               </div>
+          </div>
 
-        <div class="login-page-background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
-        <div class="login-page-background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
-        <div class="login-page-background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
-        <div class="login-page-background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
-        <div class="login-page-background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
-        <div class="login-page-background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
-    </div>
+          <div class="mascota-container-fixed" id="mascota">
+               <div class="mascota-container-relative">
+                    <img src="~/Images/light-cloud-mascot.svg" alt="" class="mascota-cloud" />
+                    <div class="message-container">
+                         <img src="~/Images/light-message-mascot.svg" alt="" class="message-image" />
+                         <p class="message-text">Hi there!</p>
+                    </div>
+               </div>
+          </div>
+
+          <div class="login-page-background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+          <div class="login-page-background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+          <div class="login-page-background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+          <div class="login-page-background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+          <div class="login-page-background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+          <div class="login-page-background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+     </div>
 
 </body>
 </html>
