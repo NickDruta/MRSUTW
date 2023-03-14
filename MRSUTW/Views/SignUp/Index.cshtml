@@ -1,0 +1,59 @@
+﻿@{
+     Layout = null;
+}
+@using System.Web.Optimization
+@model MRSUTW.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+     <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+     <Title>Registration</Title>
+     
+     @Styles.Render("~/styles/signup")
+</head>
+<body>
+     <div class="login-page">
+          <div class="login-page-container">
+               <div class="login-page-container-left">
+                    <div class="login-page-container-left-avatar">
+                         <img src="~/Images/avatar.svg">
+                    </div>
+                    <div class="login-page-container-left-description">
+                         <div class="login-page-container-left-description-text">
+                              Hi there!
+                         </div>
+                    </div>
+               </div>
+               <div class="login-page-container-right">
+                    <div class="login-page-container-right-title">
+                         Let's register
+                    </div>
+                    <div class="login-page-container-right-inputs">
+                         <input class="login-page-container-right-inputs-item"
+                                placeholder="Username"
+                                value="@Html.DisplayFor(u => u.Username)" />
+                         <input class="login-page-container-right-inputs-item"
+                                placeholder="Password"
+                                type="password"
+                                value="@Html.DisplayFor(u => u.Password)" />
+                    </div>
+                    <div class="login-page-container-right-button">
+                         Register
+                    </div>
+                    <a class="login-page-container-right-subbutton" href="@Url.Action("Index","SignIn")">
+                         Or login now →
+                    </a>
+
+               </div>
+          </div>
+
+          <div class="login-page-background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+          <div class="login-page-background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+          <div class="login-page-background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+          <div class="login-page-background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+          <div class="login-page-background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+          <div class="login-page-background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+     </div>
+</body>
+</html>
