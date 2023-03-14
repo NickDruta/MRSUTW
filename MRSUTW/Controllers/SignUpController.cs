@@ -7,9 +7,9 @@ using System.Web.Mvc;
 
 namespace MRSUTW.Controllers
 {
-    public class SingUpController : Controller
+    public class SignUpController : Controller
     {
-        // GET: SingUp
+        // GET: SignUp
         public ActionResult Index()
         {
             User u = new User();
