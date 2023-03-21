@@ -117,6 +117,27 @@ body {
         width: auto;
     }
 
+.switch-button {
+    position: absolute;
+    left: 65px;
+    background-image: url(../../images/whiteButton.svg);
+    width: 60px;
+    height: 60px;
+    border: 0;
+    background-position: center;
+    background-size: 45px;
+    background-repeat: no-repeat;
+    background-color: #DCE5F2;
+    border-radius: 50%;
+    box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
+}
+
+.dark-mode .switch-button {
+    background-image: url(../../images/darkButton.svg);
+    background-color: #23334A;
+    box-shadow: -12px 12px 24px rgba(20, 29, 41, 0.2), 12px -12px 24px rgba(20, 29, 41, 0.2), -12px -12px 24px rgba(50, 73, 107, 0.9), 12px 12px 30px rgba(20, 29, 41, 0.9), inset 1px 1px 2px rgba(50, 73, 107, 0.3), inset -1px -1px 2px rgba(20, 29, 41, 0.5);
+}
+
 .widgets {
     display: flex;
     width: 100%;
@@ -179,3 +200,70 @@ body {
     box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
     border-radius: 100%;
 }
+
+.dark-mode {
+    background-color: #28344c;
+    color: #333333;
+}
+
+    .dark-mode .navbar-item:not(.search-container):not(.avatar-item).active {
+        background-color: #28344c !important;
+        color: #f2f2f2 !important;
+        box-shadow: -5px 5px 10px rgba(28, 41, 59, 0.2), 5px -5px 10px rgba(28, 41, 59, 0.2), -5px -5px 10px rgba(42, 61, 89, 0.9), 5px 5px 13px rgba(28, 41, 59, 0.9), inset 1px 1px 2px rgba(42, 61, 89, 0.3), inset -1px -1px 2px rgba(28, 41, 59, 0.5) !important;
+    }
+
+    .dark-mode .navbar-item:not(.search-container):not(.avatar-item):hover {
+        background-color: #28344c !important;
+        color: #f2f2f2 !important;
+        box-shadow: -5px 5px 10px rgba(28, 41, 59, 0.2), 5px -5px 10px rgba(28, 41, 59, 0.2), -5px -5px 10px rgba(42, 61, 89, 0.9), 5px 5px 13px rgba(28, 41, 59, 0.9), inset 1px 1px 2px rgba(42, 61, 89, 0.3), inset -1px -1px 2px rgba(28, 41, 59, 0.5) !important;
+    }
+
+.dark-mode .navbar-item:not(.search-container):not(.avatar-item) a {
+    color: #f2f2f2 !important;
+}
+
+    .dark-mode .widget {
+        background-color: #28344c !important;
+        color: #f2f2f2;
+        box-shadow: -22px 22px 44px rgba(23, 34, 49, 0.2), 22px -22px 44px rgba(23, 34, 49, 0.2), -22px -22px 44px rgba(47, 68, 99, 0.9), 22px 22px 55px rgba(23, 34, 49, 0.9), inset 1px 1px 2px rgba(47, 68, 99, 0.3), inset -1px -1px 2px rgba(23, 34, 49, 0.5) !important;
+    }
+    .dark-mode .homepage .navbar {
+        background: #23334A !important;
+        box-shadow: -22px 22px 44px rgba(23, 34, 49, 0.2), 22px -22px 44px rgba(23, 34, 49, 0.2), -22px -22px 44px rgba(47, 68, 99, 0.9), 22px 22px 55px rgba(23, 34, 49, 0.9), inset 1px 1px 2px rgba(47, 68, 99, 0.3), inset -1px -1px 2px rgba(23, 34, 49, 0.5) !important;
+    }
+
+    .dark-mode .background-figure {
+        background: #23334A !important;
+        box-shadow: -11px 11px 22px rgba(26, 38, 56, 0.2), 11px -11px 22px rgba(26, 38, 56, 0.2), -11px -11px 22px rgba(44, 64, 93, 0.9), 11px 11px 28px rgba(26, 38, 56, 0.9), inset 1px 1px 2px rgba(44, 64, 93, 0.3), inset -1px -1px 2px rgba(26, 38, 56, 0.5);
+    }
+
+    .dark-mode .search-container {
+        background: #23334A !important;
+        color: #f2f2f2 !important;
+        box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9) !important;
+    }
+
+.dark-mode .search-container input {
+            color: #f2f2f2 !important;
+            border-bottom: 1px solid #f2f2f2 !important;
+        }
+
+    .dark-mode .search-container input::placeholder {
+        color: #f2f2f2 !important;
+    }
+
+    .dark-mode .avatar-item .avatar-container {
+        box-shadow: -5px 5px 10px rgba(28, 41, 59, 0.2), 5px -5px 10px rgba(28, 41, 59, 0.2), -5px -5px 10px rgba(42, 61, 89, 0.9), 5px 5px 13px rgba(28, 41, 59, 0.9), inset 1px 1px 2px rgba(42, 61, 89, 0.3), inset -1px -1px 2px rgba(28, 41, 59, 0.5) !important;
+    }
+
+.dark-mode .search-container .search-button img {
+    fill: #f2f2f2 !important;
+}
+
+    .dark-mode .widgets .widget .widget-title {
+        background: #23334A !important;
+        box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9) !important;
+        color: #f2f2f2 !important;
+    }
+
+
