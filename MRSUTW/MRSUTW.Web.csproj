@@ -246,6 +246,19 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MRSUTW.BusinessLogic\MRSUTW.BusinessLogic.csproj">
+      <Project>{2a6d9333-9495-43a6-bb95-838f83e2c82d}</Project>
+      <Name>MRSUTW.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MRSUTW.Domain\MRSUTW.Domain.csproj">
+      <Project>{3d15e07a-654f-4201-970c-747438427bda}</Project>
+      <Name>MRSUTW.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
