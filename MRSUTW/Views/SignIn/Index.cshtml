@@ -39,9 +39,18 @@
                               type="password"
                               value="@Html.DisplayFor(u => u.Password)" />
                    </div>
-                   <a href="@Url.Action("Index", "Home")" class="login-page-container-right-button">
-                       Login
-                   </a>
+                    @using (Ajax.BeginForm("Index", "SignIn", new AjaxOptions
+                    {
+                         HttpMethod = "POST",
+                         OnSuccess = "succes",
+                         OnFailure = "failure",
+                         UpdateTargetId = "resultTarget"
+                    }))
+                    {
+                        <button class="login-page-container-right-button" type="submit" style="border: none">
+                            Login
+                        </button>
+                    }
                    <a class="login-page-container-right-subbutton" href="@Url.Action("Index","SignUp")">
                        Or register now →
                    </a>
