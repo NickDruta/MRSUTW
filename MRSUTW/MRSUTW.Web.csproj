@@ -117,6 +117,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\pagestyles\Events.css" />
     <Content Include="Content\pagestyles\Orar.css" />
     <Content Include="Content\pagestyles\SignUp.css" />
     <Content Include="Content\pagestyles\SignIn.css" />
@@ -193,6 +194,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrarController.cs" />
     <Compile Include="Controllers\SignInController.cs" />
@@ -200,6 +202,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventContent.cs" />
     <Compile Include="Models\Pereche.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,6 +244,8 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Orar\Index.cshtml" />
+    <Content Include="Views\Events\EventUse.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
