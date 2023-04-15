@@ -9,11 +9,13 @@ using MRSUTW.Models;
 namespace MRSUTW.Controllers
 {
     public class EventsController : Controller
-    {
-        EventContent db = new EventContent();
-        public ViewResult EventUse()
+     { 
+        public ActionResult Index()
           {
-               return View(db.list.ToList());
+               Event e = new Event();
+               e.title = "Title";
+               e.description = "Description";
+               return View(e);
           }
     }
 }

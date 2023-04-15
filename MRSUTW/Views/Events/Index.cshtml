@@ -19,16 +19,16 @@
           <button id="switch-mode" class="switch-button"></button>
           <div class="navbar">
                <div class="navbar-item">
-                    <a href="#">Pagina principala</a>
+                    <a href="@Url.Action("Index","Home")">Pagina principala</a>
                </div>
                <div class="navbar-item">
-                    <a href="#">Orar</a>
+                    <a href="@Url.Action("Index","Orar")">Orar</a>
                </div>
                <div class="navbar-item">
                     <a href="#">Registru</a>
                </div>
                <div class="navbar-item active">
-                    <a href="#">Evenimente</a>
+                    Evenimente
                </div>
                <div class="navbar-item search-container">
                     <input type="text" placeholder="Cauta student" />
@@ -47,9 +47,8 @@
           </div>
 
           <div class="widgets">
-               <div class="widgets-center">
-                    <a href="#">
-                         <div class="widget widget-big">
+              <a href="#">
+                         <div class="widget">
                               <div class="widget-title">Evenimente</div>
                               <div class="widget-event">
                                    <div class="widget-event-box">@Model.title</div>
