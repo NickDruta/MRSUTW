@@ -20,8 +20,12 @@ namespace MRSUTW
 
             bundles.Add(new StyleBundle("~/styles/signup").Include(
                 "~/Content/pagestyles/SignUp.css"));
+
             bundles.Add(new StyleBundle("~/styles/orar").Include(
                 "~/Content/pagestyles/Orar.css"));
-        }
+
+            bundles.Add(new StyleBundle("~/styles/events").Include(
+               "~/Content/pagestyles/Events.css"));
+          }
     }
 }
