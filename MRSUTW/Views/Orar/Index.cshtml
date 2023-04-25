@@ -1,0 +1,186 @@
+﻿@{
+    Layout = null;
+}
+@using System.Web.Optimization;
+@model MRSUTW.Models.Pereche
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+    <Title>MRSUTW</Title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @Styles.Render("~/styles/orar")
+</head>
+<body>
+<div class="orar">
+    <button id="switch-mode" class="switch-button"></button>
+    <div class="navbar">
+        <div class="navbar-item">
+            <a href="@Url.Action("Index","Home")">Pagina principala</a>
+        </div>
+        <div class="navbar-item active">
+            Orar
+        </div>
+        <div class="navbar-item">
+            <a href="@Url.Action("Index","Register")">Registru</a>
+        </div>
+        <div class="navbar-item">
+            <a href="@Url.Action("Index","Events")">Evenimente</a>
+        </div>
+        <div class="navbar-item search-container">
+            <input type="text" placeholder="Cauta student"/>
+            <div class="search-button">
+                <img src="~/Images/search.svg" alt=""/>
+            </div>
+        </div>
+        <div class="navbar-item avatar-item">
+            <a href="#">
+                <div class="avatar-container">
+                    <img src="~/Images/avatar_navbar.svg" alt=""/>
+                </div>
+            </a>
+        </div>
+        
+        
+
+    </div>
+        
+    <div class="orar_widget">
+        <div class="orar_widget-label">
+            Orar
+            
+        </div>
+        <table class="my-table">
+            <tbody>
+            <tr>
+                <td>Ora/Ziua</td>
+                <td>Luni</td>
+                <td>Marți</td>
+                <td>Miercuri</td>
+                <td>Joi</td>
+                <td>Vineri</td>
+            </tr>
+            <tr>
+                <td>@Model.start-@Model.end</td>
+                @if (@Model.typeOfDay == "Luni")
+                {
+                    <td>@Model.obiect</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                @if (@Model.typeOfDay == "Marti")
+                {
+                    <td>@Model.obiect</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                @if (@Model.typeOfDay == "Miercuri")
+                {
+                    <td>@Model.obiect</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                @if (@Model.typeOfDay == "Joi")
+                {
+                    <td>@Model.obiect</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                @if (@Model.typeOfDay == "Vineri")
+                {
+                    <td>@Model.obiect</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+    <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+    <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+    <div class="background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+<div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+<script>
+    $(document).ready(function () {
+        const mode = localStorage.getItem("mode");
+        if (mode === "darkMode") {
+            $('body').addClass('dark-mode')
+        }
+    })
+
+    $('#switch-mode').click(function() {
+        $('body').toggleClass('dark-mode');
+        if ($('body').hasClass('dark-mode')) {
+            localStorage.setItem("mode", "darkMode")
+        } else {
+            localStorage.setItem("mode", "whiteMode")
+        }
+    });
+
+</script>
+</body>
+</html>

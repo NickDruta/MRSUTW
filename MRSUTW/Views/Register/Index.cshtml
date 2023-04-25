@@ -2,7 +2,7 @@
     Layout = null;
 }
 @using System.Web.Optimization;
-@model MRSUTW.Models.User
+@model MRSUTW.Models.Pereche
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
                 <a href="#">Orar</a>
             </div>
             <div class="navbar-item active">
-                <a href="#">Registru</a>
+                Registru
             </div>
             <div class="navbar-item">
                 <a href="#">Evenimente</a>
@@ -43,7 +43,7 @@
                 </a>
             </div>
 
-        </div>             
+        </div>
 
 
         <div class="register-page-container">
@@ -77,7 +77,7 @@
                         <td>John Smith</td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td>@Model.value</td>
                         <td></td>
                         <td></td>
                         <td></td>

@@ -1,0 +1,88 @@
+﻿@{
+     Layout = null;
+}
+@using System.Web.Optimization;
+@model MRSUTW.Models.Event
+
+
+<!DOCTYPE html>
+<html>
+<head>
+     <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+     <Title>MRSUTW</Title>
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     @Styles.Render("~/styles/events")
+</head>
+<body>
+     <div class="events">
+          <button id="switch-mode" class="switch-button"></button>
+          <div class="navbar">
+               <div class="navbar-item">
+                    <a href="@Url.Action("Index","Home")">Pagina principala</a>
+               </div>
+               <div class="navbar-item">
+                    <a href="@Url.Action("Index","Orar")">Orar</a>
+               </div>
+               <div class="navbar-item">
+                    <a href="#">Registru</a>
+               </div>
+               <div class="navbar-item active">
+                    Evenimente
+               </div>
+               <div class="navbar-item search-container">
+                    <input type="text" placeholder="Cauta student" />
+                    <div class="search-button">
+                         <img src="~/Images/search.svg" alt="" />
+                    </div>
+               </div>
+               <div class="navbar-item avatar-item">
+                    <a href="#">
+                         <div class="avatar-container">
+                              <img src="~/Images/avatar_navbar.svg" alt="" />
+                         </div>
+                    </a>
+               </div>
+
+          </div>
+
+          <div class="widgets">
+              <a href="#">
+                         <div class="widget">
+                              <div class="widget-title">Evenimente</div>
+                              <div class="widget-event">
+                                   <div class="widget-event-box">@Model.title</div>
+                                   <div class="widget-event-box-content">@Model.description</div>
+
+                              </div>
+                         </div>
+                    </a>
+               </div>
+          </div>
+     </div>
+     <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+     <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+     <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+     <div class="background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+     <div class="background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+     <div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+     <script>
+          $(document).ready(function () {
+                                             const mode = localStorage.getItem("mode");
+                                             if (mode === "darkMode") {
+                    $('body').addClass('dark-mode')
+                                             }
+                                        })
+
+          $('#switch-mode').click(function () {
+               $('body').toggleClass('dark-mode');
+                                             if ($('body').hasClass('dark-mode')) {
+                                                  localStorage.setItem("mode", "darkMode")
+                                             } else {
+                                                  localStorage.setItem("mode", "whiteMode")
+               }
+                                        });
+
+     </script>
+</body>
+</html>
