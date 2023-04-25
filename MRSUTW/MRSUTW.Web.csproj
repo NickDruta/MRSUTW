@@ -122,6 +122,7 @@
     <Content Include="Content\pagestyles\SignUp.css" />
     <Content Include="Content\pagestyles\SignIn.css" />
     <Content Include="Content\pagestyles\Homepage.css" />
+    <Content Include="Content\pagestyles\Register.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -166,6 +167,7 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\arrow.svg" />
     <Content Include="Images\avatar.svg" />
     <Content Include="Images\avatar_navbar.svg" />
     <Content Include="Images\light-cloud-mascot.svg" />
@@ -197,6 +199,7 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrarController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SignInController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Global.asax.cs">
@@ -244,6 +247,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Orar\Index.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

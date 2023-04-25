@@ -14,5 +14,6 @@ namespace MRSUTW.Models
         public string obiect { get; set; }
         public string profesor { get; set; }
         public int cabinet { get; set; }
+        public string value { get; set; }
     }
 }
