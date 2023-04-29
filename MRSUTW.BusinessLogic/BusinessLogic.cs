@@ -8,5 +8,10 @@ namespace MRSUTW.BusinessLogic
           {
                return new SessionBL();
           }
+
+          public IPereche GetPerecheBL()
+          {
+              return new PerecheBL();
+          }
      }
 }

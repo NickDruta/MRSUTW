@@ -2,7 +2,7 @@
     Layout = null;
 }
 @using System.Web.Optimization;
-@model MRSUTW.Models.Pereche
+@model IEnumerable<MRSUTW.Models.Pereche>
 
 <!DOCTYPE html>
 <html>
@@ -63,46 +63,49 @@
                 <td>Vineri</td>
             </tr>
             <tr>
-                <td>@Model.start-@Model.end</td>
-                @if (@Model.typeOfDay == "Luni")
+                @foreach (var pereche in @Model)
                 {
-                    <td>@Model.obiect</td>
-                }
-                else
-                {
-                    <td></td>
-                }
-                @if (@Model.typeOfDay == "Marti")
-                {
-                    <td>@Model.obiect</td>
-                }
-                else
-                {
-                    <td></td>
-                }
-                @if (@Model.typeOfDay == "Miercuri")
-                {
-                    <td>@Model.obiect</td>
-                }
-                else
-                {
-                    <td></td>
-                }
-                @if (@Model.typeOfDay == "Joi")
-                {
-                    <td>@Model.obiect</td>
-                }
-                else
-                {
-                    <td></td>
-                }
-                @if (@Model.typeOfDay == "Vineri")
-                {
-                    <td>@Model.obiect</td>
-                }
-                else
-                {
-                    <td></td>
+                    <td>@pereche.start-@pereche.end</td>
+                    if (@pereche.typeOfDay == "Luni")
+                    {
+                        <td>@pereche.obiect</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    if (@pereche.typeOfDay == "Marti")
+                    {
+                        <td>@pereche.obiect</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    if (@pereche.typeOfDay == "Miercuri")
+                    {
+                        <td>@pereche.obiect</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    if (@pereche.typeOfDay == "Joi")
+                    {
+                        <td>@pereche.obiect</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    if (@pereche.typeOfDay == "Vineri")
+                    {
+                        <td>@pereche.obiect</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
                 }
             </tr>
             <tr>
