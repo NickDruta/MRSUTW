@@ -10,5 +10,6 @@ namespace MRSUTW.BusinessLogic.Interfaces
     public interface IPereche
     {
         List<PerecheData> getOrar();
+        List<PerecheData> getRegister();
     }
 }

@@ -2,7 +2,7 @@
     Layout = null;
 }
 @using System.Web.Optimization;
-@model MRSUTW.Models.Pereche
+@model IEnumerable<MRSUTW.Models.Pereche>
 
 <!DOCTYPE html>
 <html>
@@ -77,13 +77,16 @@
                         <td>John Smith</td>
                         <td></td>
                         <td></td>
-                        <td>@Model.value</td>
+                        @foreach (var prod in @Model)
+                        {
+                            <td>@prod.value</td>
+                        }
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -94,11 +97,11 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
-                        <td>a</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -108,7 +111,7 @@
                         <td>3</td>
                         <td>Jane Doe</td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -124,14 +127,14 @@
                         <td>4</td>
                         <td>Jane Doe</td>
                         <td></td>
-                        <td>a</td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -144,7 +147,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -162,9 +165,9 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -174,7 +177,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -189,7 +192,7 @@
                         <td>Jane Doe</td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -239,7 +242,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -270,7 +273,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -290,8 +293,8 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
-                        <td>a</td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -307,7 +310,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -321,7 +324,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -341,7 +344,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -356,7 +359,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -365,7 +368,7 @@
                         <td>Jane Doe</td>
                         <td></td>
                         <td></td>
-                        <td>a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
