@@ -2,8 +2,7 @@
      Layout = null;
 }
 @using System.Web.Optimization;
-@model MRSUTW.Models.Event
-
+@model IEnumerable<MRSUTW.Models.Event>
 
 <!DOCTYPE html>
 <html>
@@ -47,18 +46,21 @@
           </div>
 
           <div class="widgets">
-              <a href="#">
-                         <div class="widget">
-                              <div class="widget-title">Evenimente</div>
-                              <div class="widget-event">
-                                   <div class="widget-event-box">@Model.title</div>
-                                   <div class="widget-event-box-content">@Model.description</div>
+                    @foreach (var ev in @Model)
+                    {
+                         <a href="#">
+                              <div class="widget">
+                                   <div class="widget-title">Evenimente</div>
+                                   <div class="widget-event">
+                                        <div class="widget-event-box">@ev.title</div>
+                                        <div class="widget-event-box-content">@ev.description</div>
 
+                                   </div>
                               </div>
-                         </div>
-                    </a>
-               </div>
+                         </a>
+                    }
           </div>
+     </div>
      </div>
      <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
      <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
@@ -68,20 +70,20 @@
      <div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
      <script>
           $(document).ready(function () {
-                                             const mode = localStorage.getItem("mode");
-                                             if (mode === "darkMode") {
+               const mode = localStorage.getItem("mode");
+               if (mode === "darkMode") {
                     $('body').addClass('dark-mode')
-                                             }
-                                        })
+               }
+          })
 
           $('#switch-mode').click(function () {
                $('body').toggleClass('dark-mode');
-                                             if ($('body').hasClass('dark-mode')) {
-                                                  localStorage.setItem("mode", "darkMode")
-                                             } else {
-                                                  localStorage.setItem("mode", "whiteMode")
+               if ($('body').hasClass('dark-mode')) {
+                    localStorage.setItem("mode", "darkMode")
+               } else {
+                    localStorage.setItem("mode", "whiteMode")
                }
-                                        });
+          });
 
      </script>
 </body>

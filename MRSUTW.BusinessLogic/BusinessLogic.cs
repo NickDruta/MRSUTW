@@ -13,5 +13,10 @@ namespace MRSUTW.BusinessLogic
           {
               return new PerecheBL();
           }
+
+          public IEvent GetEventBL()
+          {
+               return new EventBL();
+          }
      }
 }
