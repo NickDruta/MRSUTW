@@ -1,0 +1,65 @@
+﻿@model string
+
+<div class="navbar">
+     @if (Model == "Home")
+     {
+          <div class="navbar-item active">
+               Pagina principala
+          </div>
+     }
+     else
+     {
+          <div class="navbar-item">
+               <a href="@Url.Action("Index", "Home")">"Pagina principala</a>
+          </div>
+     }
+     @if (Model == "Orar")
+     {
+          <div class="navbar-item active">
+               Orar
+          </div>
+     }
+     else
+     {
+          <div class="navbar-item">
+               <a href="@Url.Action("Index","Orar")">Orar</a>
+          </div>
+     }
+     @if (Model == "Register")
+     {
+          <div class="navbar-item active">
+               Registru
+          </div>
+     }
+     else
+     {
+          <div class="navbar-item">
+               <a href="@Url.Action("Index","Register")">Registru</a>
+          </div>
+     }
+     @if (Model == "Events")
+     {
+          <div class="navbar-item active">
+               Evenimente
+          </div>
+     }
+     else
+     {
+          <div class="navbar-item">
+               <a href="@Url.Action("Index", "Events")">Evenimente</a>
+          </div>
+     }
+     <div class="navbar-item search-container">
+          <input type="text" placeholder="Cauta student" />
+          <div class="search-button">
+               <img src="~/Images/search.svg" alt="" />
+          </div>
+     </div>
+     <div class="navbar-item avatar-item">
+          <a href="#">
+               <div class="avatar-container">
+                    <img src="~/Images/avatar_navbar.svg" alt="" />
+               </div>
+          </a>
+     </div>
+</div>

@@ -16,49 +16,23 @@
 <body>
      <div class="events">
           <button id="switch-mode" class="switch-button"></button>
-          <div class="navbar">
-               <div class="navbar-item">
-                    <a href="@Url.Action("Index","Home")">Pagina principala</a>
-               </div>
-               <div class="navbar-item">
-                    <a href="@Url.Action("Index","Orar")">Orar</a>
-               </div>
-               <div class="navbar-item">
-                    <a href="#">Registru</a>
-               </div>
-               <div class="navbar-item active">
-                    Evenimente
-               </div>
-               <div class="navbar-item search-container">
-                    <input type="text" placeholder="Cauta student" />
-                    <div class="search-button">
-                         <img src="~/Images/search.svg" alt="" />
-                    </div>
-               </div>
-               <div class="navbar-item avatar-item">
-                    <a href="#">
-                         <div class="avatar-container">
-                              <img src="~/Images/avatar_navbar.svg" alt="" />
-                         </div>
-                    </a>
-               </div>
 
-          </div>
+          @{ Html.RenderPartial("Header", "Events"); }
 
           <div class="widgets">
-                    @foreach (var ev in @Model)
-                    {
-                         <a href="#">
-                              <div class="widget">
-                                   <div class="widget-title">Evenimente</div>
-                                   <div class="widget-event">
-                                        <div class="widget-event-box">@ev.title</div>
-                                        <div class="widget-event-box-content">@ev.description</div>
+               @foreach (var ev in @Model)
+               {
+                    <a href="#">
+                         <div class="widget">
+                              <div class="widget-title">Evenimente</div>
+                              <div class="widget-event">
+                                   <div class="widget-event-box">@ev.title</div>
+                                   <div class="widget-event-box-content">@ev.description</div>
 
-                                   </div>
                               </div>
-                         </a>
-                    }
+                         </div>
+                    </a>
+               }
           </div>
      </div>
      </div>
