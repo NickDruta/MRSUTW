@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+     Layout = null;
 }
 @using System.Web.Optimization;
 @model IEnumerable<MRSUTW.Models.Pereche>
@@ -14,375 +14,348 @@
     @Styles.Render("~/styles/register")
 </head>
 <body>
-    <div class="register-page">
-        <button id="switch-mode" class="switch-button"></button>
-        <div class="navbar">
-            <div class="navbar-item">
-                <a href="#">Pagina principala</a>
-            </div>
-            <div class="navbar-item">
-                <a href="#">Orar</a>
-            </div>
-            <div class="navbar-item active">
-                Registru
-            </div>
-            <div class="navbar-item">
-                <a href="#">Evenimente</a>
-            </div>
-            <div class="navbar-item search-container">
-                <input type="text" placeholder="Cauta student" />
-                <div class="search-button">
-                    <img src="~/Images/search.svg" alt="" />
-                </div>
-            </div>
-            <div class="navbar-item avatar-item">
-                <a href="#">
-                    <div class="avatar-container">
-                        <img src="~/Images/avatar_navbar.svg" alt="" />
-                    </div>
-                </a>
-            </div>
+     <div class="register-page">
+          <button id="switch-mode" class="switch-button"></button>
 
-        </div>
+          @{ Html.RenderPartial("Header", "Register"); }
 
-
-        <div class="register-page-container">
-            <div class="register-page-selector">
-                <img src="~/Images/arrow.svg" class="register-page-selector-arrow">
-                <div class="choice-rectangle">Registru</div>
-                <img src="~/Images/arrow.svg" class="register-page-selector-arrow-right">
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Row</th>
-                        <th>Student Name</th>
-                        <th>01/01</th>
-                        <th>02/01</th>
-                        <th>03/01</th>
-                        <th>04/01</th>
-                        <th>05/01</th>
-                        <th>06/01</th>
-                        <th>07/01</th>
-                        <th>08/01</th>
-                        <th>09/01</th>
-                        <th>10/01</th>
-                        <th>11/01</th>
-                        <th>12/01</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>John Smith</td>
-                        <td></td>
-                        <td></td>
-                        @foreach (var prod in @Model)
-                        {
-                            <td>@prod.value</td>
-                        }
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>Jane Doe</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+          <div class="register-page-container">
+               <div class="register-page-selector">
+                    <img src="~/Images/arrow.svg" class="register-page-selector-arrow">
+                    <div class="choice-rectangle">Registru</div>
+                    <img src="~/Images/arrow.svg" class="register-page-selector-arrow-right">
+               </div>
+               <table>
+                    <thead>
+                         <tr>
+                              <th>Row</th>
+                              <th>Student Name</th>
+                              <th>01/01</th>
+                              <th>02/01</th>
+                              <th>03/01</th>
+                              <th>04/01</th>
+                              <th>05/01</th>
+                              <th>06/01</th>
+                              <th>07/01</th>
+                              <th>08/01</th>
+                              <th>09/01</th>
+                              <th>10/01</th>
+                              <th>11/01</th>
+                              <th>12/01</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                              <td>1</td>
+                              <td>John Smith</td>
+                              <td></td>
+                              <td></td>
+                              @foreach (var prod in @Model)
+                              {
+                                   <td>@prod.value</td>
+                              }
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>2</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>3</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>4</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>5</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>6</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>7</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>8</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>9</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>10</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>11</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>12</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>13</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>14</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>15</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>16</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>17</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>18</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                         <tr>
+                              <td>19</td>
+                              <td>Jane Doe</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                         </tr>
+                    </tbody>
+               </table>
+          </div>
+     </div>
     <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
     <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
     <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>

@@ -14,68 +14,42 @@
     @Styles.Render("~/styles/homepage")
 </head>
 <body>
-<div class="homepage">
-    <button id="switch-mode" class="switch-button"></button>
-    <div class="navbar">
-        <div class="navbar-item active">
-            Pagina principala
-        </div>
-        <div class="navbar-item">
-            <a href="@Url.Action("Index","Orar")">Orar</a>
-        </div>
-        <div class="navbar-item">
-            <a href="@Url.Action("Index","Register")">Registru</a>
-        </div>
-        <div class="navbar-item">
-            <a href="@Url.Action("Index", "Events")">Evenimente</a>
-        </div>
-        <div class="navbar-item search-container">
-            <input type="text" placeholder="Cauta student"/>
-            <div class="search-button">
-                <img src="~/Images/search.svg" alt=""/>
-            </div>
-        </div>
-        <div class="navbar-item avatar-item">
-            <a href="#">
-                <div class="avatar-container">
-                    <img src="~/Images/avatar_navbar.svg" alt=""/>
-                </div>
-            </a>
-        </div>
+     <div class="homepage">
+          <button id="switch-mode" class="switch-button"></button>
 
-    </div>
+          @{ Html.RenderPartial("Header", "Home"); }
 
-    <div class="widgets">
-        <div class="widgets-left">
-            <a href="#">
-                <div class="widget">
-                    <div class="widget-title">Orar</div>
-                    <div class="widget-content">
-                        <div class="widget-item">Lab TSI</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="widgets-right">
-            <a href="#">
-                <div class="widget widget-small">
-                    <div class="widget-title">Registru</div>
-                    <div class="widget-content">
-                        <div class="widget-item">9</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="widget widget-small">
-                    <div class="widget-title">Evenimente</div>
-                    <div class="widget-content">
-                        <div class="widget-item">Cunoaste UTM</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
+          <div class="widgets">
+               <div class="widgets-left">
+                    <a href="#">
+                         <div class="widget">
+                              <div class="widget-title">Orar</div>
+                              <div class="widget-content">
+                                   <div class="widget-item">Lab TSI</div>
+                              </div>
+                         </div>
+                    </a>
+               </div>
+               <div class="widgets-right">
+                    <a href="#">
+                         <div class="widget widget-small">
+                              <div class="widget-title">Registru</div>
+                              <div class="widget-content">
+                                   <div class="widget-item">9</div>
+                              </div>
+                         </div>
+                    </a>
+                    <a href="#">
+                         <div class="widget widget-small">
+                              <div class="widget-title">Evenimente</div>
+                              <div class="widget-content">
+                                   <div class="widget-item">Cunoaste UTM</div>
+                              </div>
+                         </div>
+                    </a>
+               </div>
+          </div>
+     </div>
     <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
     <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
     <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
