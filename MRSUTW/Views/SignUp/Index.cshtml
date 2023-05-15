@@ -26,26 +26,40 @@
                     </div>
                </div>
                <div class="login-page-container-right">
-                    <div class="login-page-container-right-title">
-                         Let's register
-                    </div>
-                    <div class="login-page-container-right-inputs">
-                         <input class="login-page-container-right-inputs-item"
-                                placeholder="Username"
-                                value="@Html.DisplayFor(u => u.Username)" />
-                         <input class="login-page-container-right-inputs-item"
-                                placeholder="Password"
-                                type="password"
-                                value="@Html.DisplayFor(u => u.Password)" />
-                    </div>
-                    <div class="login-page-container-right-button">
-                         Register
-                    </div>
-                    <a class="login-page-container-right-subbutton" href="@Url.Action("Index","SignIn")">
-                         Or login now →
-                    </a>
-
-               </div>
+                   @using (Ajax.BeginForm("Index", "SignUp", new AjaxOptions
+                   {
+                       HttpMethod = "POST",
+                       OnSuccess = "succes",
+                       OnFailure = "failure",
+                       UpdateTargetId = "resultTarget"
+                   }))
+                   {
+                       <div class="login-page-container-right-title">
+                           Let's register
+                       </div>
+                       <div class="login-page-container-right-inputs">
+                           <input class="login-page-container-right-inputs-item"
+                                  id="email"
+                                  name="email"
+                                  placeholder="Email"
+                                  value="@Html.DisplayFor(u => u.Email)" />
+                           <input class="login-page-container-right-inputs-item"
+                                  id="password"
+                                  name="password"
+                                  placeholder="Password"
+                                  type="password"
+                                  value="@Html.DisplayFor(u => u.Password)" />
+                       </div>
+                       
+                       <button class="login-page-container-right-button" type="submit">
+                           Register
+                       </button>
+                       <br/>
+                       <a class="login-page-container-right-subbutton" href="@Url.Action("Index", "SignIn")">
+                           Or login now →
+                       </a>
+                   }
+                   </div>
           </div>
 
           <div class="login-page-background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>

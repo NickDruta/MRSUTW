@@ -10,5 +10,6 @@ namespace MRSUTW.BusinessLogic.Interfaces
      public interface ISession
      {
           PostResponse UserLogin(ULoginData data);
-     }
+          PostResponse UserRegister(USignupData data);
+    }
 }
