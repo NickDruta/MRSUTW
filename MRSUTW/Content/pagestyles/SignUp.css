@@ -159,6 +159,8 @@ body {
     line-height: 31px;
     color: #DCE5F2;
     cursor: pointer;
+    outline: none;
+    border: 0;
 }
 
 .login-page-container-right-subbutton {

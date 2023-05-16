@@ -54,9 +54,11 @@
     <Compile Include="Entities\Event\EventData.cs" />
     <Compile Include="Entities\Pereche\PerecheData.cs" />
     <Compile Include="Entities\User\PostResponse.cs" />
+    <Compile Include="Entities\User\SessionsDbTable.cs" />
     <Compile Include="Entities\User\UDbTable.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\USignupData.cs" />
+    <Compile Include="Enums\UType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,9 +67,7 @@
       <Name>MRSUTW.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

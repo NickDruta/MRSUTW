@@ -1,0 +1,61 @@
+﻿@model string
+
+<div class="navbar">
+    <div class="navbar-item">
+        <a href="@Url.Action("Index", "Home")">Exit Admin</a>
+    </div>
+    @if (Model == "Home")
+    {
+        <div class="navbar-item active">
+            Home
+        </div>
+    }
+    else
+    {
+        <div class="navbar-item">
+            <a href="@Url.Action("Index","AdminHome")">Home</a>
+        </div>
+    }
+    @if (Model == "Users")
+    {
+        <div class="navbar-item active">
+            Utilizatori
+        </div>
+    }
+    else
+    {
+        <div class="navbar-item">
+            <a href="@Url.Action("Index","AdminUsers")">Utilizatori</a>
+        </div>
+    }
+    @if (Model == "Perechi")
+    {
+        <div class="navbar-item active">
+            Perechi
+        </div>
+    }
+    else
+    {
+        <div class="navbar-item">
+            <a href="@Url.Action("Index", "AdminPerechi")">Perechi</a>
+        </div>
+    }
+    @if (Model == "Events")
+    {
+        <div class="navbar-item active">
+            Evenimente
+        </div>
+    }
+    else
+    {
+        <div class="navbar-item">
+            <a href="@Url.Action("Index", "AdminEvents")">Evenimente</a>
+        </div>
+    }
+    <div class="navbar-item search-container">
+        <input type="text" placeholder="Cauta student" />
+        <div class="search-button">
+            <img src="~/Images/search.svg" alt="" />
+        </div>
+    </div>
+</div>

@@ -30,27 +30,31 @@
                    <div class="login-page-container-right-title">
                        Please Login
                    </div>
-                   <div class="login-page-container-right-inputs">
-                       <input class="login-page-container-right-inputs-item"
-                              placeholder="Username"
-                              value="@Html.DisplayFor(u => u.Username)" />
-                       <input class="login-page-container-right-inputs-item"
-                              placeholder="Password"
-                              type="password"
-                              value="@Html.DisplayFor(u => u.Password)" />
-                   </div>
-                    @using (Ajax.BeginForm("Index", "SignIn", new AjaxOptions
-                    {
-                         HttpMethod = "POST",
-                         OnSuccess = "succes",
-                         OnFailure = "failure",
-                         UpdateTargetId = "resultTarget"
-                    }))
-                    {
-                        <button class="login-page-container-right-button" type="submit" style="border: none">
-                            Login
-                        </button>
-                    }
+                   @using (Ajax.BeginForm("Index", "SignIn", new AjaxOptions
+                   {
+                       HttpMethod = "POST",
+                       OnSuccess = "succes",
+                       OnFailure = "failure",
+                       UpdateTargetId = "resultTarget"
+                   }))
+                   {
+                       <div class="login-page-container-right-inputs">
+                           <input class="login-page-container-right-inputs-item"
+                                  id="email"
+                                  name="email"
+                                  placeholder="Email"
+                                  value="@Html.DisplayFor(u => u.Email)" />
+                           <input class="login-page-container-right-inputs-item"
+                                  id="password"
+                                  name="password"
+                                  placeholder="Password"
+                                  type="password"
+                                  value="@Html.DisplayFor(u => u.Password)" />
+                       </div>
+                       <button class="login-page-container-right-button" type="submit" style="border: none">
+                           Login
+                       </button>
+                   }
                    <a class="login-page-container-right-subbutton" href="@Url.Action("Index","SignUp")">
                        Or register now →
                    </a>
