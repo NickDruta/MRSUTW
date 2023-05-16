@@ -22,11 +22,8 @@ namespace MRSUTW.Controllers
         // GET: SignIn
         public ActionResult Index()
         {
-            User u = new User();
-            u.Username = "admin";
-            u.Password = "parola";
 
-            return View(u);
+            return View();
         }
 
           //POST: Login
@@ -37,7 +34,7 @@ namespace MRSUTW.Controllers
                {
                     ULoginData data = new ULoginData
                     {
-                         Credential = login.Username,
+                         Credential = login.Email,
                          Password = login.Password,
                          LoginIp = Request.UserHostAddress,
                          LoginDateTime = DateTime.Now,

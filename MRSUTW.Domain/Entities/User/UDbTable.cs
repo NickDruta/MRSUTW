@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using MRSUTW.Domain.Enums;
 
 namespace MRSUTW.Domain.Entities.User
 {
@@ -35,5 +36,6 @@ namespace MRSUTW.Domain.Entities.User
         [StringLength(30)]
         public string LasIp { get; set; }
 
+        public UType Type { get; set; }
     }
 }
