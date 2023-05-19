@@ -38,7 +38,7 @@ namespace MRSUTW.Controllers
                 var userRegister = _session.UserRegister(data);
                 if (userRegister.Status)
                 {
-                    return RedirectToAction("Index", "SignIn");
+                    return RedirectToAction("Index", "RegistrationSuccess");
                 }
                 else
                 {

@@ -16,19 +16,15 @@ namespace MRSUTW.Domain.Entities.User
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Display(Name = "Username")]
-        [StringLength(30, MinimumLength = 5, ErrorMessage = "Username cannot be longer than 30 characters.")]
-        public string Username { get; set; }
+        [Required]
+        [Display(Name = "Email Address")]
+        [StringLength(50)]
+        public string Email { get; set; }
 
         [Required]
         [Display(Name = "Password")]
         [StringLength(50, MinimumLength = 8, ErrorMessage = "Password cannot be shorter than 8 characters.")]
         public string Password { get; set; }
-
-        [Required]
-        [Display(Name = "Email Address")]
-        [StringLength(30)]
-        public string Email { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime LastLogin { get; set; }
@@ -36,6 +32,26 @@ namespace MRSUTW.Domain.Entities.User
         [StringLength(30)]
         public string LasIp { get; set; }
 
+        [StringLength(10)]
+        public string Group { get; set; }
+
+        public int Year { get; set; }
+
+        [StringLength(10)]
+        public string Faculty { get; set; }
+
+        [StringLength(20)]
+        public string PhoneNumber { get; set; }
+
+        public UCost Cost { get; set; }
+
+        public int GradeBuget { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime Birthday { get; set; }
+
         public UType Type { get; set; }
+
+        public bool IsVerified { get; set; }
     }
 }

@@ -2,13 +2,12 @@
      Layout = null;
 }
 @using System.Web.Optimization
-@model MRSUTW.Models.User
 
 <!DOCTYPE html>
 <html>
 <head>
      <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
-     <Title>UTMConnect</Title>
+     <Title>Registration</Title>
      
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      @Styles.Render("~/styles/signup")
@@ -26,41 +25,16 @@
                     </div>
                 </div>
             </div>
-            <div class="login-page-container-right">
-                @using (Ajax.BeginForm("Index", "SignUp", new AjaxOptions
-                {
-                    HttpMethod = "POST",
-                    OnSuccess = "succes",
-                    OnFailure = "failure",
-                    UpdateTargetId = "resultTarget"
-                }))
-                {
-                    <div class="login-page-container-right-title">
-                        Înregistrați-vă
-                    </div>
-                    <div class="login-page-container-right-inputs">
-                        <input class="login-page-container-right-inputs-item"
-                               id="email"
-                               name="email"
-                               placeholder="E-mail"
-                               value="@Html.DisplayFor(u => u.Email)" />
-                        <input class="login-page-container-right-inputs-item"
-                               id="password"
-                               name="password"
-                               placeholder="Parola"
-                               type="password"
-                               value="@Html.DisplayFor(u => u.Password)" />
-                    </div>
-                    @Html.ValidationSummary(true)
-
-                    <button class="login-page-container-right-button" type="submit">
-                        Înregistrare
-                    </button>
-                    <br />
-                    <a class="login-page-container-right-subbutton" href="@Url.Action("Index", "SignIn")">
-                        Sau logați-vă acum →
-                    </a>
-                }
+            <div class="login-page-container-right" style="justify-content: space-between; height: 100%; padding: 30px 0;">
+                <div class="login-page-container-right-title" style="margin: 0;">
+                    Registrarea cu succes
+                </div>
+                <p class="registration-successful-text">
+                    Așteptați răspunsul administratorului pe E-Mail
+                </p>
+                <a class="login-page-container-right-subbutton" href="@Url.Action("Index", "SignIn")">
+                    Înapoi la logare →
+                </a>
             </div>
         </div>
 

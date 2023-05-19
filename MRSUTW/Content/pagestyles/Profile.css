@@ -1,0 +1,147 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    background-color: #dce5f2;
+}
+
+.profile {
+    width: 100vw;
+    height: 100vh;
+    padding: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+    height: 100%;
+    max-width: 907.09px;
+    max-height: 500px;
+    background: #DCE5F2;
+    box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
+    border-radius: 32px;
+    padding: 34px 43px 23px;
+    position: relative;
+}
+
+.info {
+    display: flex;
+    height: 100%;
+    gap: 23px;
+    align-items: center;
+}
+
+.info-left {
+    flex: 1;
+    height: 100%;
+    background: #DCE5F2;
+    box-shadow: 1px 1px 2px rgba(242, 252, 255, 0.3), -1px -1px 2px rgba(198, 206, 218, 0.5), inset -5px 5px 10px rgba(198, 206, 218, 0.2), inset 5px -5px 10px rgba(198, 206, 218, 0.2), inset -5px -5px 10px rgba(242, 252, 255, 0.9), inset 5px 5px 13px rgba(198, 206, 218, 0.9);
+    border-radius: 20px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.logo-container {
+    flex: 2;
+    background: #DCE5F2;
+    box-shadow: 1px 1px 2px rgba(242, 252, 255, 0.3), -1px -1px 2px rgba(198, 206, 218, 0.5), inset -5px 5px 10px rgba(198, 206, 218, 0.2), inset 5px -5px 10px rgba(198, 206, 218, 0.2), inset -5px -5px 10px rgba(242, 252, 255, 0.9), inset 5px 5px 13px rgba(198, 206, 218, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    content: url("../../Images/avatar.svg");
+}
+
+.info-left-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-left-container-item {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #005393;
+}
+
+.info-center {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #005393;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+.info-right {
+    flex: 2;
+    height: 100%;
+    background: #DCE5F2;
+    box-shadow: 1px 1px 2px rgba(242, 252, 255, 0.3), -1px -1px 2px rgba(198, 206, 218, 0.5), inset -5px 5px 10px rgba(198, 206, 218, 0.2), inset 5px -5px 10px rgba(198, 206, 218, 0.2), inset -5px -5px 10px rgba(242, 252, 255, 0.9), inset 5px 5px 13px rgba(198, 206, 218, 0.9);
+    border-radius: 20px;
+    padding: 23px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-right-item {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #005393;
+}
+
+.dark-mode .content {
+    background: #23334A;
+    box-shadow: -22px 22px 44px rgba(23, 34, 49, 0.2), 22px -22px 44px rgba(23, 34, 49, 0.2), -22px -22px 44px rgba(47, 68, 99, 0.9), 22px 22px 55px rgba(23, 34, 49, 0.9), inset 1px 1px 2px rgba(47, 68, 99, 0.3), inset -1px -1px 2px rgba(23, 34, 49, 0.5);
+}
+
+.dark-mode .info-left {
+    background: #23334A;
+    box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9);
+}
+
+.dark-mode .logo-container {
+    content: url("../../Images/avatar_black.svg");
+    background: #23334A;
+    box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9);
+}
+
+.dark-mode .info-left-container-item {
+    color: #DCE5F2;
+}
+
+.dark-mode .info-center {
+    color: #DCE5F2;
+}
+
+.dark-mode .info-right {
+    background: #23334A;
+    box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9);
+}
+
+.dark-mode .info-right-item {
+    color: #DCE5F2;
+}

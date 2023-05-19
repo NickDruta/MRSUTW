@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+@using System.Web.Optimization;
+@model MRSUTW.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+    <Title>MRSUTW</Title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @Styles.Render("~/styles/profile")
+    @Styles.Render("~/styles/header")
+</head>
+<body>
+    <div class="profile">
+        <button id="switch-mode" class="switch-button"></button>
+
+        @{ Html.RenderPartial("Header", ""); }
+
+
+        <div class="content">
+            <div class="info">
+                <div class="info-left">
+                    <div class="logo-container"></div>
+                    <div class="info-left-container">
+                        <div class="info-left-container-item">
+                            Grupa: @Model.Group
+                        </div>
+                        <div class="info-left-container-item">
+                            Anul: @Model.Year
+                        </div>
+                        <div class="info-left-container-item">
+                            Facultatea: @Model.Faculty
+                        </div>
+                    </div>
+                </div>
+                <div class="info-center">
+                    Profilul meu
+                </div>
+                <div class="info-right">
+                    <div class="info-right-item">
+                        Email: @Model.Email
+                    </div>
+                    <div class="info-right-item">
+                        Telefon: @Model.PhoneNumber
+                    </div>
+                    <div class="info-right-item">
+                        Plata pentru studii: @Model.Cost
+                    </div>
+                    @if (Model.Cost == MRSUTW.Domain.Enums.UCost.Buget)
+                    {
+                        <div class="info-right-item">
+                            Bursa: Gradul @Model.GradeBuget
+                        </div>
+                    }
+                    <div class="info-right-item">
+                        Data nasterii: @Model.Birthday
+                    </div>
+                    @if (Model.Type == MRSUTW.Domain.Enums.UType.Administrator)
+                    {
+                        <a class="info-right-item" href="@Url.Action("Index", "AdminHome")">
+                            Accesează Pagina de Administrator ➜
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+    <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+    <div class="background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+    <div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+    <script>
+        $(document).ready(function () {
+            const mode = localStorage.getItem("mode");
+            if (mode === "darkMode") {
+                $('body').addClass('dark-mode')
+            }
+        })
+
+        $('#switch-mode').click(function () {
+            $('body').toggleClass('dark-mode');
+            if ($('body').hasClass('dark-mode')) {
+                localStorage.setItem("mode", "darkMode")
+            } else {
+                localStorage.setItem("mode", "whiteMode")
+            }
+        });
+
+    </script>
+</body>
+</html>
+

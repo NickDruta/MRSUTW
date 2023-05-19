@@ -26,5 +26,9 @@ namespace MRSUTW.BusinessLogic
           {
               return Cookie(loginCredential);
           }
+          public UData GetProfileByCookie(string cookie)
+          {
+              return GetProfileByCookieAction(cookie);
+          }
     }
 }
