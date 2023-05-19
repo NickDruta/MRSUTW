@@ -55,9 +55,11 @@
     <Compile Include="Entities\Pereche\PerecheData.cs" />
     <Compile Include="Entities\User\PostResponse.cs" />
     <Compile Include="Entities\User\SessionsDbTable.cs" />
+    <Compile Include="Entities\User\UData.cs" />
     <Compile Include="Entities\User\UDbTable.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\USignupData.cs" />
+    <Compile Include="Enums\UCost.cs" />
     <Compile Include="Enums\UType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

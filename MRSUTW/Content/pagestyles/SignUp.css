@@ -24,6 +24,23 @@ body {
     background-color: #DCE5F2;
 }
 
+.switch-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-image: url(../../images/whiteButton.svg);
+    width: 60px;
+    height: 60px;
+    border: 0;
+    background-position: center;
+    background-size: 45px;
+    background-repeat: no-repeat;
+    background-color: #DCE5F2;
+    z-index: 2;
+    border-radius: 50%;
+    box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
+}
+
 .login-page {
     width: 100%;
     height: 100%;
@@ -73,6 +90,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    content: url("../../Images/avatar.svg");
+    padding: 35px;
 }
 
 .login-page-container-left-description {
@@ -139,9 +158,17 @@ body {
     color: #005393;
 }
 
-    .login-page-container-right-inputs-item:last-of-type {
-        margin: 0;
-    }
+.login-page-container-right-inputs-item:last-of-type {
+    margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition-delay: 9999s;
+    transition-delay: 9999s;
+}
 
 .login-page-container-right-button {
     margin-top: 48px;
@@ -149,7 +176,7 @@ body {
     background: #005393;
     box-shadow: -5px 5px 10px rgba(179, 179, 179, 0.2), 5px -5px 10px rgba(179, 179, 179, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(179, 179, 179, 0.9), inset 0px 0px 10px 4px rgba(255, 255, 255, 0.3);
     border-radius: 50px;
-    width: 173px;
+    width: 204px;
     height: 47px;
     padding: 8px;
     font-family: 'IBM Plex Mono';
@@ -174,6 +201,14 @@ body {
     text-decoration: unset;
 }
 
+.validation-summary-errors {
+    color: #005393;
+}
+
+.validation-summary-errors li {
+    list-style-type: none;
+}
+
 .login-page-background-figure {
     width: 200px;
     height: 200px;
@@ -181,4 +216,85 @@ body {
     background: linear-gradient(135deg, #D1DAE6 0%, #E7F0FE 100%);
     box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
     border-radius: 100%;
+}
+
+.registration-successful-text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #005393;
+}
+
+.dark-mode {
+    background-color: #28344c;
+    color: #333333;
+}
+
+.dark-mode .switch-button {
+    background-image: url(../../images/darkButton.svg);
+    background-color: #23334A;
+    box-shadow: -12px 12px 24px rgba(20, 29, 41, 0.2), 12px -12px 24px rgba(20, 29, 41, 0.2), -12px -12px 24px rgba(50, 73, 107, 0.9), 12px 12px 30px rgba(20, 29, 41, 0.9), inset 1px 1px 2px rgba(50, 73, 107, 0.3), inset -1px -1px 2px rgba(20, 29, 41, 0.5);
+}
+
+.dark-mode .login-page-background-figure {
+    background: #23334A !important;
+    box-shadow: -11px 11px 22px rgba(26, 38, 56, 0.2), 11px -11px 22px rgba(26, 38, 56, 0.2), -11px -11px 22px rgba(44, 64, 93, 0.9), 11px 11px 28px rgba(26, 38, 56, 0.9), inset 1px 1px 2px rgba(44, 64, 93, 0.3), inset -1px -1px 2px rgba(26, 38, 56, 0.5);
+}
+
+.dark-mode .login-page-container {
+    background: #23334A;
+    box-shadow: -22px 22px 44px rgba(23, 34, 49, 0.2), 22px -22px 44px rgba(23, 34, 49, 0.2), -22px -22px 44px rgba(47, 68, 99, 0.9), 22px 22px 55px rgba(23, 34, 49, 0.9), inset 1px 1px 2px rgba(47, 68, 99, 0.3), inset -1px -1px 2px rgba(23, 34, 49, 0.5);
+}
+
+.dark-mode .login-page-container-right-title {
+    color: #DCE5F2;
+}
+
+.dark-mode .login-page-container-right-inputs-item {
+    background: #23334A;
+    box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9);
+    color: #DCE5F2;
+}
+
+.dark-mode .login-page-container-right-inputs-item:focus {
+    border: 1px solid #DCE5F2;
+}
+
+.dark-mode .login-page-container-right-button {
+    box-shadow: -9px 9px 18px rgba(25, 36, 53, 0.2), 9px -9px 18px rgba(25, 36, 53, 0.2), -9px -9px 18px rgba(45, 66, 95, 0.9), 9px 9px 23px rgba(25, 36, 53, 0.9), inset 1px 1px 2px rgba(45, 66, 95, 0.3), inset -1px -1px 2px rgba(25, 36, 53, 0.5);
+}
+
+.dark-mode .login-page-container-right-subbutton {
+    color: #DCE5F2;
+}
+
+.dark-mode .login-page-container-left {
+    background: #23334A;
+    box-shadow: 1px 1px 2px rgba(47, 68, 99, 0.3), -1px -1px 2px rgba(23, 34, 49, 0.5), inset -12px 12px 24px rgba(23, 34, 49, 0.2), inset 12px -12px 24px rgba(23, 34, 49, 0.2), inset -12px -12px 24px rgba(47, 68, 99, 0.9), inset 12px 12px 30px rgba(23, 34, 49, 0.9);
+}
+
+.dark-mode .login-page-container-left-avatar {
+    content: url("../../Images/avatar_black.svg");
+    background: #23334A;
+    box-shadow: -11px 11px 22px rgba(22, 32, 47, 0.2), 11px -11px 22px rgba(22, 32, 47, 0.2), -11px -11px 22px rgba(48, 70, 101, 0.9), 11px 11px 28px rgba(22, 32, 47, 0.9), inset 1px 1px 2px rgba(48, 70, 101, 0.3), inset -1px -1px 2px rgba(22, 32, 47, 0.5);
+}
+
+.dark-mode .login-page-container-left-description {
+    background: linear-gradient(135deg, #25364E 0%, #213046 100%);
+    box-shadow: -11px 11px 22px rgba(24, 35, 51, 0.2), 11px -11px 22px rgba(24, 35, 51, 0.2), -11px -11px 22px rgba(46, 67, 97, 0.9), 11px 11px 28px rgba(24, 35, 51, 0.9), inset 1px 1px 2px rgba(46, 67, 97, 0.3), inset -1px -1px 2px rgba(24, 35, 51, 0.5);
+}
+
+.dark-mode .login-page-container-left-description-text {
+    color: #DCE5F2;
+    text-shadow: -3px 3px 6px rgba(18, 27, 38, 0.2), 3px -3px 6px rgba(18, 27, 38, 0.2), -3px -3px 6px rgba(52, 75, 110, 0.9), 3px 3px 8px rgba(18, 27, 38, 0.9);
+}
+
+.dark-mode .registration-successful-text {
+    color: #DCE5F2;
+}
+
+.dark-mode .validation-summary-errors {
+    color: #DCE5F2;
 }
