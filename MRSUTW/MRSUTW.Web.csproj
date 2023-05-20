@@ -132,6 +132,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\pagestyles\AdminHome.css" />
+    <Content Include="Content\pagestyles\AdminUsers.css" />
     <Content Include="Content\pagestyles\Events.css" />
     <Content Include="Content\pagestyles\Header.css" />
     <Content Include="Content\pagestyles\Orar.css" />
@@ -190,6 +191,8 @@
     <Content Include="Images\avatar_navbar.svg" />
     <Content Include="Images\dark-cloud-mascot.svg" />
     <Content Include="Images\dark-message-mascot.svg" />
+    <Content Include="Images\edit.svg" />
+    <Content Include="Images\delete.svg" />
     <Content Include="Images\light-cloud-mascot.svg" />
     <Content Include="Images\light-message-mascot.svg" />
     <Content Include="Images\search.svg" />
@@ -217,6 +220,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
+    <Compile Include="Controllers\AdminUsersController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrarController.cs" />
@@ -276,6 +280,7 @@
     <Content Include="Views\Shared\AdminHeader.cshtml" />
     <Content Include="Views\RegistrationSuccess\Index.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\AdminUsers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

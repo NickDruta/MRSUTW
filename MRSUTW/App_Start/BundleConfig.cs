@@ -33,6 +33,9 @@ namespace MRSUTW
             bundles.Add(new StyleBundle("~/styles/adminhome").Include(
                 "~/Content/pagestyles/AdminHome.css"));
 
+            bundles.Add(new StyleBundle("~/styles/adminusers").Include(
+                "~/Content/pagestyles/AdminUsers.css"));
+
             bundles.Add(new StyleBundle("~/styles/profile").Include(
                 "~/Content/pagestyles/Profile.css"));
 

@@ -1,0 +1,72 @@
+﻿@{
+    Layout = null;
+}
+@using System.Web.Optimization;
+@using System.Data;
+@model IEnumerable<MRSUTW.Models.User>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+    <Title>MRSUTW</Title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @Styles.Render("~/styles/adminusers")
+    @Styles.Render("~/styles/header")
+</head>
+<body>
+    <div class="admin-users">
+        <button id="switch-mode" class="switch-button"></button>
+        @{ Html.RenderPartial("AdminHeader", "Users"); }
+
+
+    <div class="admin-user-widget">
+        @foreach (var u in Model)
+        {
+            <div class="user-container">
+                <div class="user-container-title">
+                    <div class="avatar-container">
+                        <img src="~/Images/avatar_navbar.svg" alt="" />
+                    </div>
+                    <p>@u.Email</p>
+                    <div class="actions">
+                        <img src="~/Images/edit.svg" alt="" />
+                        <img src="~/Images/delete.svg" alt="" />
+                    </div>
+                </div>
+                <div class="user-container-data">
+                    Verificat: @u.IsVerified <br /> <br />
+                    Grupa: @u.Group <br /> <br />
+                    E-Mail: @u.Email <br /> <br />
+                </div>
+            </div>
+        }
+    </div>
+    </div>
+    <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+    <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+    <div class="background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+    <div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+    <script>
+        $(document).ready(function () {
+            const mode = localStorage.getItem("mode");
+            if (mode === "darkMode") {
+                $('body').addClass('dark-mode')
+            }
+        })
+
+        $('#switch-mode').click(function () {
+            $('body').toggleClass('dark-mode');
+            if ($('body').hasClass('dark-mode')) {
+                localStorage.setItem("mode", "darkMode")
+            } else {
+                localStorage.setItem("mode", "whiteMode")
+            }
+        });
+
+    </script>
+</body>
+</html>
