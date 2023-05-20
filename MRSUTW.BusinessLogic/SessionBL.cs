@@ -30,5 +30,9 @@ namespace MRSUTW.BusinessLogic
           {
               return GetProfileByCookieAction(cookie);
           }
+          public List<UData> GetUsers()
+          {
+              return GetUsersAction();
+          }
     }
 }

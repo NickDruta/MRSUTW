@@ -206,5 +206,37 @@ namespace MRSUTW.BusinessLogic.Core
 
             return userprofile;
         }
+
+        internal List<UData> GetUsersAction()
+        {
+            List<UData> users = new List<UData>();
+
+            using (var db = new UserContext())
+            {
+                var userList = db.Users.ToList();
+
+                foreach (var user in userList)
+                {
+                    var userprofile = new UData
+                    {
+                        Id = user.Id,
+                        Email = user.Email,
+                        Group = user.Group,
+                        Year = user.Year,
+                        Faculty = user.Faculty,
+                        PhoneNumber = user.PhoneNumber,
+                        Cost = user.Cost,
+                        GradeBuget = user.GradeBuget,
+                        Birthday = user.Birthday,
+                        Type = user.Type,
+                        IsVerified = user.IsVerified,
+                    };
+
+                    users.Add(userprofile);
+                }
+            }
+
+            return users;
+        }
      }
 }
