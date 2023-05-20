@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MRSUTW.BusinessLogic.DBModel;
 using MRSUTW.BusinessLogic.Interfaces;
 using MRSUTW.Domain.Entities.Pereche;
+using MRSUTW.Domain.Enums;
 
 namespace MRSUTW.BusinessLogic.Core
 {
@@ -12,20 +14,32 @@ namespace MRSUTW.BusinessLogic.Core
     {
         public List<PerecheData> getOrarAction()
         {
-            PerecheData pereche1 = new PerecheData();
+            List<PerecheData> perechi = new List<PerecheData>();
 
-            pereche1.Id = 0;
-            pereche1.start = DateTime.Now.ToString("HH:mm");
-            pereche1.end = DateTime.Now.AddMinutes(90).ToString("HH:mm");
-            pereche1.typeOfDay = "Luni";
-            pereche1.obiect = "Tw";
-            pereche1.profesor = "Dragos Strainu";
-            pereche1.cabinet = 518;
-            pereche1.value = "a";
-            List<PerecheData> Orar = new List<PerecheData>();
-            Orar.Add(pereche1);
+            using (var db = new UserContext())
+            {
+                var perechiList = db.Perechi.ToList();
 
-            return Orar; 
+                foreach (var pereche in perechiList)
+                {
+                    var perecheData = new PerecheData
+                    {
+                        Start = pereche.Start,
+                        End = pereche.End,
+                        TypeOfDay = pereche.TypeOfDay,
+                        WeekType = pereche.WeekType,
+                        ObiectType = pereche.ObiectType,
+                        Obiect = pereche.Obiect,
+                        Profesor = pereche.Profesor,
+                        Grupa = pereche.Grupa,
+                        Cabinet = pereche.Cabinet,
+                    };
+
+                    perechi.Add(perecheData);
+                }
+            }
+
+            return perechi;
         }
 
         public List<PerecheData> getRegisterAction()
@@ -33,13 +47,12 @@ namespace MRSUTW.BusinessLogic.Core
             PerecheData pereche1 = new PerecheData();
 
             pereche1.Id = 0;
-            pereche1.start = DateTime.Now.ToString("HH:mm");
-            pereche1.end = DateTime.Now.AddMinutes(90).ToString("HH:mm");
-            pereche1.typeOfDay = "Luni";
-            pereche1.obiect = "Tw";
-            pereche1.profesor = "Dragos Strainu";
-            pereche1.cabinet = 518;
-            pereche1.value = "a";
+            pereche1.Start = DateTime.Now;
+            pereche1.End = DateTime.Now;
+            pereche1.WeekType = PType.Ambele;
+            pereche1.Obiect = "Tw";
+            pereche1.Profesor = "Dragos Strainu";
+            pereche1.Cabinet = 518;
             List<PerecheData> Register = new List<PerecheData>();
             Register.Add(pereche1);
 
