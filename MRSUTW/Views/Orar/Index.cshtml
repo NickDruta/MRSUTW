@@ -38,42 +38,42 @@
                          <tr>
                               @foreach (var pereche in @Model)
                               {
-                                   <td>@pereche.start-@pereche.end</td>
-                                   if (@pereche.typeOfDay == "Luni")
+                                   <td>@pereche.Start-@pereche.End</td>
+                                   if (@pereche.TypeOfDay == 0)
                                    {
-                                        <td>@pereche.obiect</td>
+                                        <td>@pereche.Obiect</td>
                                    }
                                    else
                                    {
                                         <td></td>
                                    }
-                                   if (@pereche.typeOfDay == "Marti")
+                                   if (@pereche.TypeOfDay == 1)
                                    {
-                                        <td>@pereche.obiect</td>
+                                        <td>@pereche.Obiect</td>
                                    }
                                    else
                                    {
                                         <td></td>
                                    }
-                                   if (@pereche.typeOfDay == "Miercuri")
+                                   if (@pereche.TypeOfDay == 2)
                                    {
-                                        <td>@pereche.obiect</td>
+                                        <td>@pereche.Obiect</td>
                                    }
                                    else
                                    {
                                         <td></td>
                                    }
-                                   if (@pereche.typeOfDay == "Joi")
+                                   if (@pereche.TypeOfDay == 3)
                                    {
-                                        <td>@pereche.obiect</td>
+                                        <td>@pereche.Obiect</td>
                                    }
                                    else
                                    {
                                         <td></td>
                                    }
-                                   if (@pereche.typeOfDay == "Vineri")
+                                   if (@pereche.TypeOfDay == 4)
                                    {
-                                        <td>@pereche.obiect</td>
+                                        <td>@pereche.Obiect</td>
                                    }
                                    else
                                    {

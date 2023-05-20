@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Event\EventData.cs" />
+    <Compile Include="Entities\Pereche\PDbTable.cs" />
     <Compile Include="Entities\Pereche\PerecheData.cs" />
     <Compile Include="Entities\User\PostResponse.cs" />
     <Compile Include="Entities\User\SessionsDbTable.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Entities\User\UDbTable.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\USignupData.cs" />
+    <Compile Include="Enums\PType.cs" />
     <Compile Include="Enums\UCost.cs" />
     <Compile Include="Enums\UType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
