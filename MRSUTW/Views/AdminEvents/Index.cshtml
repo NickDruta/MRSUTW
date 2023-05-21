@@ -1,0 +1,77 @@
+﻿@{
+     Layout = null;
+}
+@using System.Web.Optimization;
+@model IEnumerable<MRSUTW.Models.Event>
+
+<!DOCTYPE html>
+<html>
+<head>
+     <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+     <Title>MRSUTW</Title>
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     @Styles.Render("~/styles/admin-events")
+     @Styles.Render("~/styles/header")
+</head>
+<body>
+     <div class="events">
+          <button id="switch-mode" class="switch-button"></button>
+
+          @{ Html.RenderPartial("Header", "Events"); }
+
+          <div class="widgets"> 
+               <div class="add-container"> 
+                    <img src="~/Images/add.svg" alt="" />
+               </div>
+                    <a href="#">
+                         <div class="widget">
+                              <div class="widget-title">Evenimente</div>
+                              @foreach (var ev in @Model)
+                              {
+                                   <div class="widget-event">
+                                        <div class="widget-event-title-container">
+                                             <div class="widget-event-box">@ev.Title</div>
+                                             
+                                             <div class="actions">
+                                                  <img src="~/Images/edit.svg" alt="" />
+                                                  <img src="~/Images/delete.svg" alt="" />
+                                             </div>
+                                             <div class="widget-event-created">@ev.Created</div>
+                                        </div>
+                                        <div class="widget-event-box-content">@ev.Description</div>
+
+                                   </div>
+                              }
+                              </div>
+                    </a>
+               
+          </div>
+     </div>
+     </div>
+     <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+     <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+     <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+     <div class="background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+     <div class="background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+     <div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+     <script>
+          $(document).ready(function () {
+               const mode = localStorage.getItem("mode");
+               if (mode === "darkMode") {
+                    $('body').addClass('dark-mode')
+               }
+          })
+
+          $('#switch-mode').click(function () {
+               $('body').toggleClass('dark-mode');
+               if ($('body').hasClass('dark-mode')) {
+                    localStorage.setItem("mode", "darkMode")
+               } else {
+                    localStorage.setItem("mode", "whiteMode")
+               }
+          });
+
+     </script>
+</body>
+</html>
