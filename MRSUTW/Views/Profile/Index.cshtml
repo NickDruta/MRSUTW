@@ -2,7 +2,7 @@
     Layout = null;
 }
 @using System.Web.Optimization;
-@model MRSUTW.Models.User
+@model MRSUTW.Models.ProfileData
 
 <!DOCTYPE html>
 <html>
@@ -26,44 +26,121 @@
                 <div class="info-left">
                     <div class="logo-container"></div>
                     <div class="info-left-container">
-                        <div class="info-left-container-item">
-                            Grupa: @Model.Group
-                        </div>
-                        <div class="info-left-container-item">
-                            Anul: @Model.Year
-                        </div>
-                        <div class="info-left-container-item">
-                            Facultatea: @Model.Faculty
-                        </div>
+                        @if (Model.IsEdit)
+                        {
+                            <div class="info-left-container-item">
+                                Grupa: <input value="@Model.User.Group" name="group" id="group" />
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="info-left-container-item">
+                                Grupa: @Model.User.Group
+                            </div>
+                        }
+                        @if (Model.IsEdit)
+                        {
+                            <div class="info-left-container-item">
+                                Anul: <input value="@Model.User.Year" name="year" id="year" />
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="info-left-container-item">
+                                Anul: @Model.User.Year
+                            </div>
+                        }
+                        @if (Model.IsEdit)
+                        {
+                            <div class="info-left-container-item">
+                                Facultatea: <input value="@Model.User.Faculty" name="faculty" id="faculty" />
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="info-left-container-item">
+                                Facultatea: @Model.User.Faculty
+                            </div>
+                        }
+
                     </div>
                 </div>
                 <div class="info-center">
                     Profilul meu
                 </div>
                 <div class="info-right">
-                    <div class="info-right-item">
-                        Email: @Model.Email
-                    </div>
-                    <div class="info-right-item">
-                        Telefon: @Model.PhoneNumber
-                    </div>
-                    <div class="info-right-item">
-                        Plata pentru studii: @Model.Cost
-                    </div>
-                    @if (Model.Cost == MRSUTW.Domain.Enums.UCost.Buget)
+                    @if (Model.IsEdit)
                     {
                         <div class="info-right-item">
-                            Bursa: Gradul @Model.GradeBuget
+                            Email: <input value="@Model.User.Email" name="email" id="email" />
                         </div>
                     }
+                    else
+                    {
+                        <div class="info-right-item">
+                            Email: @Model.User.Email
+                        </div>
+                    }
+                    @if (Model.IsEdit)
+                    {
+                        <div class="info-right-item">
+                            Telefon: <input value="@Model.User.PhoneNumber" name="phonenumber" id="phonenumber" />
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="info-right-item">
+                            Telefon: @Model.User.PhoneNumber
+                        </div>
+                    }
+                    @if (Model.IsEdit)
+                    {
+                        <div class="info-right-item">
+                            Plata pentru studii: <input value="@Model.User.Cost" name="cost" id="cost" />
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="info-right-item">
+                            Plata pentru studii: @Model.User.Cost
+                        </div>
+                    }
+
+                    @if (Model.User.Cost == MRSUTW.Domain.Enums.UCost.Buget && Model.IsEdit)
+                    {
+                        <div class="info-right-item">
+                            Bursa: Gradul <input value="@Model.User.GradeBuget" name="gradebuget" id="gradebuget" />
+                        </div>
+                    }
+                    else if (Model.User.Cost == MRSUTW.Domain.Enums.UCost.Buget)
+                    {
+                        <div class="info-right-item">
+                            Bursa: Gradul @Model.User.GradeBuget
+                        </div>
+                    }
+                    @if (Model.IsEdit)
+                    {
+                        <div class="info-right-item">
+                            Data nasterii: <input value="@Model.User.Birthday" name="birthday" id="birthday" />
+                        </div>
+                    }
+                    else
+                    {
                     <div class="info-right-item">
-                        Data nasterii: @Model.Birthday
+                        Data nasterii: @Model.User.Birthday
                     </div>
-                    @if (Model.Type == MRSUTW.Domain.Enums.UType.Administrator)
+                    }
+                    @if (Model.User.Type == MRSUTW.Domain.Enums.UType.Administrator)
                     {
                         <a class="info-right-item" href="@Url.Action("Index", "AdminHome")">
                             Accesează Pagina de Administrator ➜
                         </a>
+                    }
+                    @if (Model.IsEdit)
+                    {
+                        <div class="save-button" id="save-button">
+                            Salveaza
+                        </div>
                     }
                 </div>
             </div>
@@ -81,6 +158,56 @@
             if (mode === "darkMode") {
                 $('body').addClass('dark-mode')
             }
+
+            $('#search-button').click(function () {
+                const data = $('#search-input').val();
+                $.ajax({
+                    url: "/Profile/Search/",
+                    type: "POST",
+                    data: {
+                        searchData: data,
+                    },
+                    success: function (result) {
+                        if (result.redirectUrl) {
+                            window.location.href = result.redirectUrl;
+                        } else {
+                            console.log(result);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+
+            $('#save-button').click(function () {
+                $.ajax({
+                    url: "/Profile/Update/",
+                    type: "GET",
+                    data: {
+                        Id: @Model.User.Id,
+                        Email: $("#email").val(),
+                        Group: $("#group").val(),
+                        Year: $("#year").val(),
+                        Faculty: $("#faculty").val(),
+                        PhoneNumber: $("#phonenumber").val(),
+                        Cost: $("#cost").val(),
+                        GradeBuget: $("#gradebuget") ? $("#gradebuget").val() : "0",
+                        Birthday: $("#birthday").val(),
+                        Type: `@Model.User.Type`,
+                    },
+                    success: function (result) {
+                        if (result.redirectUrl) {
+                            window.location.href = result.redirectUrl;
+                        } else {
+                            console.log(result);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            })
         })
 
         $('#switch-mode').click(function () {

@@ -2,7 +2,7 @@
     Layout = null;
 }
 @using System.Web.Optimization;
-@model MRSUTW.Models.User
+@model MRSUTW.Models.HomeData
 
 <!DOCTYPE html>
 <html>
@@ -22,11 +22,35 @@
 
           <div class="widgets">
                <div class="widgets-left">
-                    <a href="#">
+                    <a href="@Url.Action("Index","Orar")">
                          <div class="widget">
                               <div class="widget-title">Orar</div>
                               <div class="widget-content">
-                                   <div class="widget-item">Lab TSI</div>
+                                  <table class="orar_widget_table">
+                                      <tbody>
+                                          <tr>
+                                              <td>
+                                                  Ora
+                                              </td>
+                                              <td>
+                                                  Azi
+                                              </td>
+                                          </tr>
+                                          @foreach (var p in Model.perecheList)
+                                          {
+                                              <tr>
+                                                  <td>
+                                                      @p.Start.Hour:@p.Start.Minute - @p.End.Hour:@p.End.Minute
+                                                  </td>
+                                                  <td>
+                                                      @p.ObiectType @p.Obiect <br>
+                                                      (@p.Cabinet)<br>
+                                                      @p.Profesor
+                                                  </td>
+                                              </tr>
+                                          }
+                                      </tbody>
+                                  </table>
                               </div>
                          </div>
                     </a>
@@ -63,6 +87,27 @@
         if (mode === "darkMode") {
             $('body').addClass('dark-mode')
         }
+
+        $('#search-button').click(function () {
+            const data = $('#search-input').val();
+            $.ajax({
+                url: "/Profile/Search/",
+                type: "POST",
+                data: {
+                    searchData: data,
+                },
+                success: function (result) {
+                    if (result.redirectUrl) {
+                        window.location.href = result.redirectUrl;
+                    } else {
+                        console.log(result);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
     })
 
     $('#switch-mode').click(function() {

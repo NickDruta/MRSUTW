@@ -15,5 +15,8 @@ namespace MRSUTW.BusinessLogic.Interfaces
           HttpCookie GenCookie(string loginCredential);
           UData GetProfileByCookie(string cookie);
           List<UData> GetUsers();
-    }
+          UData GetProfileByEmail(string email);
+          List<UData> DeleteUserById(int id);
+          UData UpdateProfile(UData u);
+     }
 }

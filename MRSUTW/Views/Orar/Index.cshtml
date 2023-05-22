@@ -15,148 +15,397 @@
     @Styles.Render("~/styles/header")
 </head>
 <body>
-     <div class="orar">
-          <button id="switch-mode" class="switch-button"></button>
+    <div class="orar">
+        <button id="switch-mode" class="switch-button"></button>
 
-          @{ Html.RenderPartial("Header", "Orar"); }
+        @{ Html.RenderPartial("Header", "Orar"); }
 
-          <div class="orar_widget">
-               <div class="orar_widget-label">
-                    Orar
+        <div class="orar_widget">
+            <div class="orar_widget-label">
+                Orar
 
-               </div>
-               <table class="my-table">
-                    <tbody>
-                         <tr>
-                              <td>Ora/Ziua</td>
-                              <td>Luni</td>
-                              <td>Marți</td>
-                              <td>Miercuri</td>
-                              <td>Joi</td>
-                              <td>Vineri</td>
-                         </tr>
-                         <tr>
-                              @foreach (var pereche in @Model)
-                              {
-                                   <td>@pereche.Start-@pereche.End</td>
-                                   if (@pereche.TypeOfDay == 0)
-                                   {
-                                        <td>@pereche.Obiect</td>
-                                   }
-                                   else
-                                   {
-                                        <td></td>
-                                   }
-                                   if (@pereche.TypeOfDay == 1)
-                                   {
-                                        <td>@pereche.Obiect</td>
-                                   }
-                                   else
-                                   {
-                                        <td></td>
-                                   }
-                                   if (@pereche.TypeOfDay == 2)
-                                   {
-                                        <td>@pereche.Obiect</td>
-                                   }
-                                   else
-                                   {
-                                        <td></td>
-                                   }
-                                   if (@pereche.TypeOfDay == 3)
-                                   {
-                                        <td>@pereche.Obiect</td>
-                                   }
-                                   else
-                                   {
-                                        <td></td>
-                                   }
-                                   if (@pereche.TypeOfDay == 4)
-                                   {
-                                        <td>@pereche.Obiect</td>
-                                   }
-                                   else
-                                   {
-                                        <td></td>
-                                   }
-                              }
-                         </tr>
-                         <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                    </tbody>
-               </table>
-          </div>
+            </div>
+            <table class="my-table">
+                <tbody>
+                    <tr>
+                        <td>Ora/Ziua</td>
+                        <td>Luni</td>
+                        <td>Marți</td>
+                        <td>Miercuri</td>
+                        <td>Joi</td>
+                        <td>Vineri</td>
+                    </tr>
+                    <tr>
+                        @foreach (var pereche in @Model)
+                        {
+                            <td>8:00 - 9:30</td>
+                            if (@pereche.TypeOfDay == 0 && @pereche.Start.Hour == 8 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 1 && @pereche.Start.Hour == 8 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 2 && @pereche.Start.Hour == 8 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 3 && @pereche.Start.Hour == 8 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 4 && @pereche.Start.Hour == 8 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var pereche in @Model)
+                        {
+                            <td>9:45 - 11:15</td>
+                            if (@pereche.TypeOfDay == 0 && @pereche.Start.Hour == 8 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 1 && @pereche.Start.Hour == 9 && @pereche.Start.Minute == 46)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 2 && @pereche.Start.Hour == 9 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 3 && @pereche.Start.Hour == 9 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 4 && @pereche.Start.Hour == 9 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var pereche in @Model)
+                        {
+                            <td>11:30 - 13:00</td>
+                            if (@pereche.TypeOfDay == 0 && @pereche.Start.Hour == 11 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 1 && @pereche.Start.Hour == 11 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 2 && @pereche.Start.Hour == 11 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 3 && @pereche.Start.Hour == 11 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 4 && @pereche.Start.Hour == 11 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var pereche in @Model)
+                        {
+                            <td>13:30 - 15:00</td>
+                            if (@pereche.TypeOfDay == 0 && @pereche.Start.Hour == 13 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 1 && @pereche.Start.Hour == 13 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 2 && @pereche.Start.Hour == 13 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 3 && @pereche.Start.Hour == 13 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 4 && @pereche.Start.Hour == 13 && @pereche.Start.Minute == 30)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var pereche in @Model)
+                        {
+                            <td>15:15 - 16:45</td>
+                            if (@pereche.TypeOfDay == 0 && @pereche.Start.Hour == 15 && @pereche.Start.Minute == 15)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 1 && @pereche.Start.Hour == 15 && @pereche.Start.Minute == 15)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 2 && @pereche.Start.Hour == 15 && @pereche.Start.Minute == 15)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 3 && @pereche.Start.Hour == 15 && @pereche.Start.Minute == 15)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 4 && @pereche.Start.Hour == 15 && @pereche.Start.Minute == 15)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var pereche in @Model)
+                        {
+                            <td>17:00 - 18:30</td>
+                            if (@pereche.TypeOfDay == 0 && @pereche.Start.Hour == 17 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 1 && @pereche.Start.Hour == 17 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 2 && @pereche.Start.Hour == 17 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 3 && @pereche.Start.Hour == 17 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 4 && @pereche.Start.Hour == 17 && @pereche.Start.Minute == 0)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var pereche in @Model)
+                        {
+                            <td>18:45 - 20:15</td>
+                            if (@pereche.TypeOfDay == 0 && @pereche.Start.Hour == 18 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 1 && @pereche.Start.Hour == 18 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 2 && @pereche.Start.Hour == 18 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 3 && @pereche.Start.Hour == 18 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            if (@pereche.TypeOfDay == 4 && @pereche.Start.Hour == 18 && @pereche.Start.Minute == 45)
+                            {
+                                <td>@pereche.Obiect<br />(@pereche.Cabinet)<br />@pereche.Profesor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-     </div>
+    </div>
     <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
     <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
     <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
     <div class="background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
     <div class="background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
-<div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
-<script>
-    $(document).ready(function () {
-        const mode = localStorage.getItem("mode");
-        if (mode === "darkMode") {
-            $('body').addClass('dark-mode')
-        }
-    })
+    <div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+    <script>
+        $(document).ready(function () {
+            const mode = localStorage.getItem("mode");
+            if (mode === "darkMode") {
+                $('body').addClass('dark-mode')
+            }
 
-    $('#switch-mode').click(function() {
-        $('body').toggleClass('dark-mode');
-        if ($('body').hasClass('dark-mode')) {
-            localStorage.setItem("mode", "darkMode")
-        } else {
-            localStorage.setItem("mode", "whiteMode")
-        }
-    });
+            $('#search-button').click(function () {
+                const data = $('#search-input').val();
+                $.ajax({
+                    url: "/Profile/Search/",
+                    type: "POST",
+                    data: {
+                        searchData: data,
+                    },
+                    success: function (result) {
+                        if (result.redirectUrl) {
+                            window.location.href = result.redirectUrl;
+                        } else {
+                            console.log(result);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+        })
 
-</script>
+        $('#switch-mode').click(function () {
+            $('body').toggleClass('dark-mode');
+            if ($('body').hasClass('dark-mode')) {
+                localStorage.setItem("mode", "darkMode")
+            } else {
+                localStorage.setItem("mode", "whiteMode")
+            }
+        });
+
+    </script>
 </body>
 </html>
