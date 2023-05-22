@@ -34,5 +34,17 @@ namespace MRSUTW.BusinessLogic
           {
               return GetUsersAction();
           }
+          public UData GetProfileByEmail(string email)
+          {
+              return GetProfileByEmailAction(email);
+          }
+          public List<UData> DeleteUserById(int id)
+          {
+              return DeleteUserByIdAction(id);
+          }
+          public UData UpdateProfile(UData u)
+          {
+              return UpdateProfileAction(u);
+          }
     }
 }

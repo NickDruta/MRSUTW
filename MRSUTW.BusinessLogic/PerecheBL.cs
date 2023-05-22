@@ -16,6 +16,11 @@ namespace MRSUTW.BusinessLogic
             return getOrarAction();
         }
 
+        public List<PerecheData> getOrarToday()
+        {
+            return getOrarTodayAction();
+        }
+
         public List<PerecheData> getRegister()
         {
             return getRegisterAction();
