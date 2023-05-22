@@ -317,6 +317,12 @@ namespace MRSUTW.BusinessLogic.Core
 
         internal UData UpdateProfileAction(UData u)
         {
+            if (!u.IsVerified)
+            {
+                u.IsVerified = true;
+                EmailHelper email = new EmailHelper();
+                email.SendEmail(u.Email, "Verificare cu succes", "Bine te-am găsit la noi în platformă, UTMConnect. Accountul tău a fost verificat cu succes și poti intra in platforma noastra.");
+            }
             using (var db = new UserContext())
             {
                 var user = db.Users.Find(u.Id);
