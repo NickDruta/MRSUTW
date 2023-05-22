@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Event\EDbTable.cs" />
     <Compile Include="Entities\Event\EventData.cs" />
     <Compile Include="Entities\Pereche\PDbTable.cs" />
     <Compile Include="Entities\Pereche\PerecheData.cs" />

@@ -1,4 +1,6 @@
-﻿using MRSUTW.Domain.Entities.Event;
+﻿using MRSUTW.BusinessLogic.DBModel;
+using MRSUTW.Domain.Entities.Event;
+using MRSUTW.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +14,26 @@ namespace MRSUTW.BusinessLogic.Core
      {
           public List<EventData> GetEventsAction()
           {
-               EventData e = new EventData();
-               e.title = "Title";
-               e.description = "Description";
-               
-               List<EventData> list = new List<EventData>();
-               list.Add(e);
+               List<EventData> events = new List<EventData>();
 
-               return list;
+               using (var db = new UserContext())
+               {
+                    var eventsList = db.Evenimente.ToList();
+
+                    foreach (var eventDb in eventsList)
+                    {
+                         var eventItem = new EventData
+                         {
+                              Id = eventDb.Id,
+                              Title = eventDb.Title,
+                              Description = eventDb.Description,
+                              Created = eventDb.Created
+                         };
+                         events.Add(eventItem);
+                    }
+               }
+
+               return events;
           }
      }
 }
