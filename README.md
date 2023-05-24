@@ -25,6 +25,12 @@
 
 
 ## Development
+.NET este o platformă de dezvoltare software creată de Microsoft, care permite dezvoltatorilor să creeze și să ruleze aplicații pe diverse medii, cum ar fi Windows, macOS și Linux. Acesta oferă un set bogat de biblioteci și servicii care facilitează dezvoltarea rapidă și scalabilă a aplicațiilor enterprise.
+
+MVC (Model-View-Controller) este un pattern arhitectural utilizat în dezvoltarea aplicațiilor web în cadrul platformei .NET. Acesta împarte aplicația în trei componente distincte: modelul (model), care gestionează datele și logica de afaceri, vizualizarea (view), care se ocupă de prezentarea informațiilor utilizatorului, și controlorul (controller), care coordonează interacțiunea între model și vizualizare. Utilizarea acestui pattern facilitează separarea preocupărilor și oferă un cod mai curat și mai ușor de întreținut.
+
+Microsoft MySQL nu este un termen specific, deoarece Microsoft nu dezvoltă produsul MySQL. MySQL este un sistem de gestionare a bazelor de date relaționale open-source, dezvoltat inițial de MySQL AB, iar în prezent este deținut și gestionat de Oracle Corporation.
+
 
 ## Team
 Echipa UTMConnect, grupa TI-213.
