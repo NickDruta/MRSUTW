@@ -18,27 +18,32 @@
      <div class="events">
           <button id="switch-mode" class="switch-button"></button>
 
-          @{ Html.RenderPartial("AdminHeader", "Events"); }
+          @{ Html.RenderPartial("AdminHeader", ""); }
 
           <div class="widgets">
                
                <a href="#">
                     <div class="widget">
                          <div class="widget-title">Evenimente</div>
-                         
-                              <div class="widget-event">
-                                   <div class="widget-event-title-container">
-                                        <div class="widget-event-box">
-                                             <input class="input-title-style" placeholder="Introdu titlul" />
-                                        </div>
 
-                                        
+                         <div class="widget-event">
+                              <div class="widget-event-title-container">
+                                   <div class="widget-event-box" >
+                                        <input class="input-title-style " id="title" placeholder="Introdu titlul" />
+
                                    </div>
-                                   <div class="widget-event-box-content">
-                                        <textarea class="input-description-style" placeholder="Introdu descrierea"></textarea>
-                                   </div>
+
 
                               </div>
+                              <div class="widget-event-box-content">
+                                   <textarea class="input-description-style" id="description" placeholder="Introdu descrierea"></textarea>
+                              </div>
+
+
+                         </div>
+                         <div class="publish-button" id="publish-button">
+                              Publica➜
+                         </div>
                     </div>
                </a>
 
@@ -56,6 +61,21 @@
                if (mode === "darkMode") {
                     $('body').addClass('dark-mode')
                }
+               $('#publish-button').click(function () {
+                    $.ajax({
+                    url: "/AdminItemEvent/Add/",
+                    type: "GET",
+                    data: {
+                        Title: $("#title").val(),
+                        Description: $("#description").val(),
+                    },
+                    complete: function (result) {
+                        
+                         window.location.href = "https://localhost:44370/AdminEvents";
+                        
+                    }
+                });
+               })
           })
 
           $('#switch-mode').click(function () {

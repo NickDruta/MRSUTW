@@ -3,7 +3,7 @@
 }
 @using System.Web.Optimization;
 @using System.Data;
-@model IEnumerable<MRSUTW.Models.User>
+@model IEnumerable<MRSUTW.Models.Pereche>
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@
 <body>
     <div class="admin-users">
         <button id="switch-mode" class="switch-button"></button>
-        @{ Html.RenderPartial("AdminHeader", "Users"); }
+        @{ Html.RenderPartial("AdminHeader", "Perechi"); }
 
 
     <div class="admin-user-widget">
@@ -26,23 +26,20 @@
         {
             <div class="user-container">
                 <div class="user-container-title">
-                    <div class="avatar-container">
-                        <img src="~/Images/avatar_navbar.svg" alt="" />
-                    </div>
-                    <p>@u.Email</p>
+                    <p style="margin: 0 auto">@u.ObiectType @u.Obiect</p>
                     <div class="actions">
-                        <a href="@Url.Action("ShowUser", "Profile", u)">
+                        <a href="#">
                             <img src="~/Images/edit.svg" alt="" />
                         </a>
-                        <a href="@Url.Action("Delete", "AdminUsers", new { id = u.Id })">
+                        <a href="#">
                             <img src="~/Images/delete.svg" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="user-container-data">
-                    Verificat: @u.IsVerified <br /> <br />
-                    Grupa: @u.Group <br /> <br />
-                    E-Mail: @u.Email <br /> <br />
+                    Profesor: @u.Profesor <br /> <br />
+                    Inceput: @u.Start <br /> <br />
+                    Sfarsit: @u.End <br /> <br />
                 </div>
             </div>
         }

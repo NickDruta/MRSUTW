@@ -15,5 +15,20 @@ namespace MRSUTW.BusinessLogic
           {
                return GetEventsAction();
           }
+
+          public EventData GetEvenimentById(int id)
+          {
+               return GetEvenimentByIdAction(id);
+          }
+
+          public void AddEveniment(EventData ev)
+          {
+               AddEvenimentAction(ev);
+          }
+
+          public List<EventData> RemoveEvenimentById(int id) 
+          {
+               return RemoveEvenimentByIdAction(id);
+          }
      }
 }

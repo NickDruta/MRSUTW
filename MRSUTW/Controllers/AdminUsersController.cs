@@ -25,7 +25,7 @@ namespace MRSUTW.Controllers
         public ActionResult Index()
         {
             var userCookie = Request.Cookies["MRSUTW"];
-            if (userCookie == null) { return RedirectToAction("Index", "Home"); }
+            if (userCookie == null) { return RedirectToAction("Index", "SignIn"); }
 
             var config = new MapperConfiguration(cfg => {
                 cfg.CreateMap<UData, User>();
@@ -37,6 +37,24 @@ namespace MRSUTW.Controllers
             List<User> users = usersProfileDataList.Select(usersProfileData => mapper.Map<User>(usersProfileData)).ToList();
 
             return View(users);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var userCookie = Request.Cookies["MRSUTW"];
+            if (userCookie == null) { return RedirectToAction("Index", "SignIn"); }
+
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<UData, User>();
+            });
+
+            IMapper mapper = config.CreateMapper();
+
+            List<UData> usersProfileDataList = _session.DeleteUserById(id);
+            List<User> users = usersProfileDataList.Select(usersProfileData => mapper.Map<User>(usersProfileData)).ToList();
+
+
+            return View("Index", users);
         }
     }
 }

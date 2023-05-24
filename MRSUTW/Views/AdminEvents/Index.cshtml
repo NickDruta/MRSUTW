@@ -24,7 +24,6 @@
                     <a class="add-container" href="@Url.Action("Index","AdminItemEvent")">
                          <img src="~/Images/add.svg" alt="" />
                     </a>
-                    <a href="#">
                          <div class="widget">
                               <div class="widget-title">Evenimente</div>
                               @foreach (var ev in @Model)
@@ -34,8 +33,9 @@
                                              <div class="widget-event-box">@ev.Title</div>
                                              
                                              <div class="actions">
-                                                  <img src="~/Images/edit.svg" alt="" />
-                                                  <img src="~/Images/delete.svg" alt="" />
+                                                  <a href="@Url.Action("Delete","AdminEvents",new { id = ev.Id })">
+                                                       <img src="~/Images/delete.svg" alt="" />
+                                                  </a>
                                              </div>
                                              <div class="widget-event-created">@ev.Created</div>
                                         </div>
@@ -44,7 +44,6 @@
                                    </div>
                               }
                               </div>
-                    </a>
                
           </div>
      </div>

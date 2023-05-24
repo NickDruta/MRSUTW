@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Entities\Event\EDbTable.cs" />
     <Compile Include="Entities\Event\EventData.cs" />
+    <Compile Include="Entities\Marks\MarksData.cs" />
+    <Compile Include="Entities\Marks\MDbTable.cs" />
     <Compile Include="Entities\Pereche\PDbTable.cs" />
     <Compile Include="Entities\Pereche\PerecheData.cs" />
     <Compile Include="Entities\User\PostResponse.cs" />

@@ -60,6 +60,27 @@
             if (mode === "darkMode") {
                 $('body').addClass('dark-mode')
             }
+
+            $('#search-button').click(function () {
+                const data = $('#search-input').val();
+                $.ajax({
+                    url: "/Profile/Search/",
+                    type: "POST",
+                    data: {
+                        searchData: data,
+                    },
+                    success: function (result) {
+                        if (result.redirectUrl) {
+                            window.location.href = result.redirectUrl;
+                        } else {
+                            console.log(result);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
         })
 
         $('#switch-mode').click(function () {

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -238,5 +239,127 @@ namespace MRSUTW.BusinessLogic.Core
 
             return users;
         }
-     }
+
+        internal UData GetProfileByEmailAction(string email)
+        {
+            UDbTable curentUser;
+
+            using (var db = new UserContext())
+            {
+                var validate = new EmailAddressAttribute();
+                if (validate.IsValid(email))
+                {
+                    curentUser = db.Users.FirstOrDefault(u => u.Email == email);
+                }
+                else
+                {
+                    curentUser = db.Users.FirstOrDefault(u => u.Email == email);
+                }
+            }
+
+            if (curentUser == null) return null;
+            var userprofile = new UData
+            {
+                Id = curentUser.Id,
+                Email = curentUser.Email,
+                Group = curentUser.Group,
+                Year = curentUser.Year,
+                Faculty = curentUser.Faculty,
+                PhoneNumber = curentUser.PhoneNumber,
+                Cost = curentUser.Cost,
+                GradeBuget = curentUser.GradeBuget,
+                Birthday = curentUser.Birthday,
+                Type = curentUser.Type,
+                IsVerified = curentUser.IsVerified,
+            };
+
+            return userprofile;
+        }
+
+        internal List<UData> DeleteUserByIdAction(int id)
+        {
+            using (var db = new UserContext())
+            {
+                var user = db.Users.Find(id);
+                if (user != null)
+                {
+                    db.Users.Remove(user);
+                    db.SaveChanges();
+                }
+
+                List<UData> users = new List<UData>();
+
+                var userList = db.Users.ToList();
+
+                foreach (var u in userList)
+                {
+                    var userprofile = new UData
+                    {
+                        Id = u.Id,
+                        Email = u.Email,
+                        Group = u.Group,
+                        Year = u.Year,
+                        Faculty = u.Faculty,
+                        PhoneNumber = u.PhoneNumber,
+                        Cost = u.Cost,
+                        GradeBuget = u.GradeBuget,
+                        Birthday = u.Birthday,
+                        Type = u.Type,
+                        IsVerified = u.IsVerified,
+                    };
+
+                    users.Add(userprofile);
+                }
+
+                return users;
+            }
+        }
+
+        internal UData UpdateProfileAction(UData u)
+        {
+            if (!u.IsVerified)
+            {
+                u.IsVerified = true;
+                EmailHelper email = new EmailHelper();
+                email.SendEmail(u.Email, "Verificare cu succes", "Bine te-am găsit la noi în platformă, UTMConnect. Accountul tău a fost verificat cu succes și poti intra in platforma noastra.");
+            }
+            using (var db = new UserContext())
+            {
+                var user = db.Users.Find(u.Id);
+                if (user != null)
+                {
+                    user.Email = u.Email;
+                    user.Group = u.Group;
+                    user.Year = u.Year;
+                    user.Faculty = u.Faculty;
+                    user.PhoneNumber = u.PhoneNumber;
+                    user.Cost = u.Cost;
+                    user.GradeBuget = u.GradeBuget;
+                    user.Birthday = u.Birthday;
+                    user.Type = u.Type;
+                    user.IsVerified = u.IsVerified;
+
+                    db.SaveChanges();
+                }
+
+                var updatedUser = new UData
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    Group = user.Group,
+                    Year = user.Year,
+                    Faculty = user.Faculty,
+                    PhoneNumber = user.PhoneNumber,
+                    Cost = user.Cost,
+                    GradeBuget = user.GradeBuget,
+                    Birthday = user.Birthday,
+                    Type = user.Type,
+                    IsVerified = user.IsVerified
+                };
+
+                return updatedUser;
+            }
+        }
+
+    }
 }

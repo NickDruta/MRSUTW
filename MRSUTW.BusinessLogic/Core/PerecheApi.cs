@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MRSUTW.BusinessLogic.DBModel;
 using MRSUTW.BusinessLogic.Interfaces;
 using MRSUTW.Domain.Entities.Pereche;
+using MRSUTW.Domain.Entities.User;
 using MRSUTW.Domain.Enums;
 
 namespace MRSUTW.BusinessLogic.Core
@@ -24,6 +25,70 @@ namespace MRSUTW.BusinessLogic.Core
                 {
                     var perecheData = new PerecheData
                     {
+                        Start = pereche.Start,
+                        End = pereche.End,
+                        TypeOfDay = pereche.TypeOfDay,
+                        WeekType = pereche.WeekType,
+                        ObiectType = pereche.ObiectType,
+                        Obiect = pereche.Obiect,
+                        Profesor = pereche.Profesor,
+                        Grupa = pereche.Grupa,
+                        Cabinet = pereche.Cabinet,
+                    };
+
+                    perechi.Add(perecheData);
+                }
+            }
+
+            return perechi;
+        }
+
+        public List<PerecheData> getOrarTodayAction()
+        {
+            DateTime today = new DateTime();
+            List<PerecheData> perechi = new List<PerecheData>();
+
+            using (var db = new UserContext())
+            {
+                var perechiList = db.Perechi.ToList();
+
+                foreach (var pereche in perechiList)
+                {
+                    if (pereche.Start.ToShortDateString() == today.ToShortDateString()) {
+                        var perecheData = new PerecheData
+                        {
+                            Start = pereche.Start,
+                            End = pereche.End,
+                            TypeOfDay = pereche.TypeOfDay,
+                            WeekType = pereche.WeekType,
+                            ObiectType = pereche.ObiectType,
+                            Obiect = pereche.Obiect,
+                            Profesor = pereche.Profesor,
+                            Grupa = pereche.Grupa,
+                            Cabinet = pereche.Cabinet,
+                        };
+
+                        perechi.Add(perecheData);
+                    }
+                }
+            }
+
+            return perechi;
+        }
+
+        internal List<PerecheData> GetPerechiAction()
+        {
+            List<PerecheData> perechi = new List<PerecheData>();
+
+            using (var db = new UserContext())
+            {
+                var perecheList = db.Perechi.ToList();
+
+                foreach (var pereche in perecheList)
+                {
+                    var perecheData = new PerecheData
+                    {
+                        Id = pereche.Id,
                         Start = pereche.Start,
                         End = pereche.End,
                         TypeOfDay = pereche.TypeOfDay,

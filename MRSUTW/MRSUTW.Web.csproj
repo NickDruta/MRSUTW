@@ -224,10 +224,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminEventsController.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
+    <Compile Include="Controllers\AdminPerechiController.cs" />
     <Compile Include="Controllers\AdminItemEventController.cs" />
     <Compile Include="Controllers\AdminUsersController.cs" />
+    <Compile Include="Controllers\EventItemController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NotFoundController.cs" />
     <Compile Include="Controllers\OrarController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -238,7 +241,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\HomeData.cs" />
     <Compile Include="Models\Pereche.cs" />
+    <Compile Include="Models\ProfileData.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -286,8 +291,11 @@
     <Content Include="Views\RegistrationSuccess\Index.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\AdminUsers\Index.cshtml" />
+    <Content Include="Views\NotFound\Index.cshtml" />
     <Content Include="Views\AdminEvents\Index.cshtml" />
+    <Content Include="Views\AdminPerechi\Index.cshtml" />
     <Content Include="Views\AdminItemEvent\Index.cshtml" />
+    <Content Include="Views\EventItem\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
