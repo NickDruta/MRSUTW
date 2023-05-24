@@ -1,4 +1,5 @@
 ﻿using MRSUTW.Domain.Entities.Event;
+using MRSUTW.Domain.Entities.Marks;
 using MRSUTW.Domain.Entities.Pereche;
 using MRSUTW.Domain.Entities.User;
 using System;
@@ -20,5 +21,6 @@ namespace MRSUTW.BusinessLogic.DBModel
         public virtual DbSet<SessionsDbTable> Sessions { get; set; }
         public virtual DbSet<PDbTable> Perechi { get; set; }
         public virtual DbSet<EDbTable> Evenimente { get; set; }
+        public virtual DbSet<MDbTable> Marks { get; set; }
     }
 }
