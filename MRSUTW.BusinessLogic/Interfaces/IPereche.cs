@@ -11,6 +11,7 @@ namespace MRSUTW.BusinessLogic.Interfaces
     {
         List<PerecheData> getOrar();
         List<PerecheData> getOrarToday();
+        List<PerecheData> GetPerechi();
         List<PerecheData> getRegister();
     }
 }

@@ -1,0 +1,94 @@
+﻿@{
+    Layout = null;
+}
+@using System.Web.Optimization;
+@using System.Data;
+@model IEnumerable<MRSUTW.Models.Pereche>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+    <Title>MRSUTW</Title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @Styles.Render("~/styles/adminusers")
+    @Styles.Render("~/styles/header")
+</head>
+<body>
+    <div class="admin-users">
+        <button id="switch-mode" class="switch-button"></button>
+        @{ Html.RenderPartial("AdminHeader", "Perechi"); }
+
+
+    <div class="admin-user-widget">
+        @foreach (var u in Model)
+        {
+            <div class="user-container">
+                <div class="user-container-title">
+                    <p style="margin: 0 auto">@u.ObiectType @u.Obiect</p>
+                    <div class="actions">
+                        <a href="#">
+                            <img src="~/Images/edit.svg" alt="" />
+                        </a>
+                        <a href="#">
+                            <img src="~/Images/delete.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="user-container-data">
+                    Profesor: @u.Profesor <br /> <br />
+                    Inceput: @u.Start <br /> <br />
+                    Sfarsit: @u.End <br /> <br />
+                </div>
+            </div>
+        }
+    </div>
+    </div>
+    <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+    <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+    <div class="background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+    <div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+    <script>
+        $(document).ready(function () {
+            const mode = localStorage.getItem("mode");
+            if (mode === "darkMode") {
+                $('body').addClass('dark-mode')
+            }
+
+            $('#search-button').click(function () {
+                const data = $('#search-input').val();
+                $.ajax({
+                    url: "/Profile/Search/",
+                    type: "POST",
+                    data: {
+                        searchData: data,
+                    },
+                    success: function (result) {
+                        if (result.redirectUrl) {
+                            window.location.href = result.redirectUrl;
+                        } else {
+                            console.log(result);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+        })
+
+        $('#switch-mode').click(function () {
+            $('body').toggleClass('dark-mode');
+            if ($('body').hasClass('dark-mode')) {
+                localStorage.setItem("mode", "darkMode")
+            } else {
+                localStorage.setItem("mode", "whiteMode")
+            }
+        });
+
+    </script>
+</body>
+</html>
