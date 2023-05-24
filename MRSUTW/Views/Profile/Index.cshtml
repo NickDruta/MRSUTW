@@ -126,9 +126,9 @@
                     }
                     else
                     {
-                    <div class="info-right-item">
-                        Data nasterii: @Model.User.Birthday
-                    </div>
+                        <div class="info-right-item">
+                            Data nasterii: @Model.User.Birthday
+                        </div>
                     }
                     @if (Model.User.Type == MRSUTW.Domain.Enums.UType.Administrator)
                     {
@@ -136,6 +136,9 @@
                             Accesează Pagina de Administrator ➜
                         </a>
                     }
+                    <a class="info-right-item" href="@Url.Action("DeleteCookie", "SignIn")">
+                        Logout
+                    </a>
                     @if (Model.IsEdit)
                     {
                         <div class="save-button" id="save-button">
