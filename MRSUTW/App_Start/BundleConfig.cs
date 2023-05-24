@@ -44,6 +44,9 @@ namespace MRSUTW
 
             bundles.Add(new StyleBundle("~/styles/admin-events").Include(
                 "~/Content/pagestyles/AdminEvents.css"));
+
+            bundles.Add(new StyleBundle("~/styles/admin-item-event").Include(
+                "~/Content/pagestyles/AdminItemEvent.css"));
           }
     }
 }

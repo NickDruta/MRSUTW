@@ -11,7 +11,7 @@
      <Title>MRSUTW</Title>
 
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     @Styles.Render("~/styles/admin-events")
+     @Styles.Render("~/styles/admin-item-event")
      @Styles.Render("~/styles/header")
 </head>
 <body>
@@ -20,34 +20,29 @@
 
           @{ Html.RenderPartial("AdminHeader", "Events"); }
 
-          <div class="widgets"> 
-                    <a class="add-container" href="@Url.Action("Index","AdminItemEvent")">
-                         <img src="~/Images/add.svg" alt="" />
-                    </a>
-                    <a href="#">
-                         <div class="widget">
-                              <div class="widget-title">Evenimente</div>
-                              @foreach (var ev in @Model)
-                              {
-                                   <div class="widget-event">
-                                        <div class="widget-event-title-container">
-                                             <div class="widget-event-box">@ev.Title</div>
-                                             
-                                             <div class="actions">
-                                                  <img src="~/Images/edit.svg" alt="" />
-                                                  <img src="~/Images/delete.svg" alt="" />
-                                             </div>
-                                             <div class="widget-event-created">@ev.Created</div>
-                                        </div>
-                                        <div class="widget-event-box-content">@ev.Description</div>
-
-                                   </div>
-                              }
-                              </div>
-                    </a>
+          <div class="widgets">
                
+               <a href="#">
+                    <div class="widget">
+                         <div class="widget-title">Evenimente</div>
+                         
+                              <div class="widget-event">
+                                   <div class="widget-event-title-container">
+                                        <div class="widget-event-box">
+                                             <input class="input-title-style" placeholder="Introdu titlul" />
+                                        </div>
+
+                                        
+                                   </div>
+                                   <div class="widget-event-box-content">
+                                        <textarea class="input-description-style" placeholder="Introdu descrierea"></textarea>
+                                   </div>
+
+                              </div>
+                    </div>
+               </a>
+
           </div>
-     </div>
      </div>
      <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
      <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>

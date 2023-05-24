@@ -25,6 +25,13 @@ body {
 .widgets {
      width: 907px;
      gap: 54px;
+     height: 500px;
+     overflow-y: auto;
+     border-radius: 32px;
+     position: relative;
+}
+.widgets::-webkit-scrollbar {
+     display: none;
 }
 
 .widgets a {
@@ -51,6 +58,7 @@ body {
      box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
      border-radius: 32px;
 }
+
 .widgets .widget .widget-title {
      width: 100%;
      background: #dce5f2;
@@ -131,4 +139,10 @@ body {
     background: #23334A !important;
     box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9) !important;
     color: #f2f2f2 !important;
+}
+
+.dark-mode .widget-event-created {
+     background: #23334A !important;
+     box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9) !important;
+     color: #f2f2f2 !important;
 }
