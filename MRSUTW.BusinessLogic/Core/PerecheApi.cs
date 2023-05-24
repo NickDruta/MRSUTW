@@ -76,6 +76,37 @@ namespace MRSUTW.BusinessLogic.Core
             return perechi;
         }
 
+        internal List<PerecheData> GetPerechiAction()
+        {
+            List<PerecheData> perechi = new List<PerecheData>();
+
+            using (var db = new UserContext())
+            {
+                var perecheList = db.Perechi.ToList();
+
+                foreach (var pereche in perecheList)
+                {
+                    var perecheData = new PerecheData
+                    {
+                        Id = pereche.Id,
+                        Start = pereche.Start,
+                        End = pereche.End,
+                        TypeOfDay = pereche.TypeOfDay,
+                        WeekType = pereche.WeekType,
+                        ObiectType = pereche.ObiectType,
+                        Obiect = pereche.Obiect,
+                        Profesor = pereche.Profesor,
+                        Grupa = pereche.Grupa,
+                        Cabinet = pereche.Cabinet,
+                    };
+
+                    perechi.Add(perecheData);
+                }
+            }
+
+            return perechi;
+        }
+
         public List<PerecheData> getRegisterAction()
         {
             PerecheData pereche1 = new PerecheData();
