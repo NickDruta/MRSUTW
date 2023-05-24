@@ -67,8 +67,11 @@
                     <a href="#">
                          <div class="widget widget-small">
                               <div class="widget-title">Evenimente</div>
-                              <div class="widget-content">
-                                   <div class="widget-item">Cunoaste UTM</div>
+                              <div class="event-widget-content"> 
+                                   @foreach (var e in Model.eventList)
+                                   {
+                                   <div class="event-widget-item">@e.Title ➜</div>
+                                   }
                               </div>
                          </div>
                     </a>

@@ -11,42 +11,43 @@
      <Title>MRSUTW</Title>
 
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     @Styles.Render("~/styles/admin-events")
+     @Styles.Render("~/styles/admin-item-event")
      @Styles.Render("~/styles/header")
 </head>
 <body>
      <div class="events">
           <button id="switch-mode" class="switch-button"></button>
 
-          @{ Html.RenderPartial("AdminHeader", "Events"); }
+          @{ Html.RenderPartial("AdminHeader", ""); }
 
-          <div class="widgets"> 
-                    <a class="add-container" href="@Url.Action("Index","AdminItemEvent")">
-                         <img src="~/Images/add.svg" alt="" />
-                    </a>
-                         <div class="widget">
-                              <div class="widget-title">Evenimente</div>
-                              @foreach (var ev in @Model)
-                              {
-                                   <div class="widget-event">
-                                        <div class="widget-event-title-container">
-                                             <div class="widget-event-box">@ev.Title</div>
-                                             
-                                             <div class="actions">
-                                                  <a href="@Url.Action("Delete","AdminEvents",new { id = ev.Id })">
-                                                       <img src="~/Images/delete.svg" alt="" />
-                                                  </a>
-                                             </div>
-                                             <div class="widget-event-created">@ev.Created</div>
-                                        </div>
-                                        <div class="widget-event-box-content">@ev.Description</div>
+          <div class="widgets">
+               
+               <a href="#">
+                    <div class="widget">
+                         <div class="widget-title">Evenimente</div>
+
+                         <div class="widget-event">
+                              <div class="widget-event-title-container">
+                                   <div class="widget-event-box" >
+                                        <input class="input-title-style " id="title" placeholder="Introdu titlul" />
 
                                    </div>
-                              }
+
+
                               </div>
-               
+                              <div class="widget-event-box-content">
+                                   <textarea class="input-description-style" id="description" placeholder="Introdu descrierea"></textarea>
+                              </div>
+
+
+                         </div>
+                         <div class="publish-button" id="publish-button">
+                              Publica➜
+                         </div>
+                    </div>
+               </a>
+
           </div>
-     </div>
      </div>
      <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
      <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
@@ -60,6 +61,21 @@
                if (mode === "darkMode") {
                     $('body').addClass('dark-mode')
                }
+               $('#publish-button').click(function () {
+                    $.ajax({
+                    url: "/AdminItemEvent/Add/",
+                    type: "GET",
+                    data: {
+                        Title: $("#title").val(),
+                        Description: $("#description").val(),
+                    },
+                    complete: function (result) {
+                        
+                         window.location.href = "https://localhost:44370/AdminEvents";
+                        
+                    }
+                });
+               })
           })
 
           $('#switch-mode').click(function () {

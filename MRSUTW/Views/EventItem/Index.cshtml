@@ -2,7 +2,7 @@
      Layout = null;
 }
 @using System.Web.Optimization;
-@model IEnumerable<MRSUTW.Models.Event>
+@model MRSUTW.Models.Event
 
 <!DOCTYPE html>
 <html>
@@ -18,26 +18,26 @@
      <div class="events">
           <button id="switch-mode" class="switch-button"></button>
 
-          @{ Html.RenderPartial("Header", "Events"); }
+          @{ Html.RenderPartial("Header", ""); }
 
      <div class="widgets">
 
           <a href="#">
                <div class="widget">
-                    <div class="widget-title">Evenimente</div>
-                    @foreach (var ev in @Model)
-                    {
-                         <a href="@Url.Action("Index","EventItem",new {id = ev.Id})">
-                              <div class="widget-event">
-                                   <div class="widget-event-title-container">
-                                        <div class="widget-event-box">@ev.Title</div>
-                                        <div class="widget-event-created">@ev.Created</div>
-                                   </div>
-                                   <div class="widget-event-box-content">@ev.Description</div>
+                    <a class="widget-event-icon" href="@Url.Action("Index","Events")">
+                         <img src="~/Images/arrow.svg" />
+                    </a>
+                    <div class="widget-title">Eveniment</div>
 
-                              </div>
-                         </a>
-                    }
+                    <div class="widget-event">
+                         <div class="widget-event-title-container">
+
+                              <div class="widget-event-box">@Model.Title</div>
+                              <div class="widget-event-created">@Model.Created</div>
+                         </div>
+                         <div class="widget-event-box-content">@Model.Description</div>
+
+                    </div>
                </div>
           </a>
 

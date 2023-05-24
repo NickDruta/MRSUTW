@@ -8,5 +8,6 @@ namespace MRSUTW.Models
     public class HomeData
     {
         public List<Pereche> perecheList { get; set; }
+        public List<Event> eventList { get; set; }
     }
 }

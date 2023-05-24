@@ -10,5 +10,8 @@ namespace MRSUTW.BusinessLogic.Interfaces
      public interface IEvent
      {
           List<EventData> GetEvents();
+          EventData GetEvenimentById(int id);
+          void AddEveniment(EventData ev);
+          List<EventData> RemoveEvenimentById(int id);
      }
 }

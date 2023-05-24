@@ -25,22 +25,23 @@ body {
 .widgets {
      width: 907px;
      gap: 54px;
-     height: 500px; 
-     overflow-y: auto; 
-     border-radius:32px;
-     position:relative;
+     height: 500px;
+     overflow-y: auto;
+     border-radius: 32px;
+     position: relative;
 }
 
-.add-container{
+.add-container {
      position: absolute;
-     top:20px;
-     right:20px;
+     top: 20px;
+     right: 20px;
 }
 
-.add-container img {
-     filter: invert(18%) sepia(80%) saturate(2613%) hue-rotate(191deg) brightness(92%) contrast(101%);
-     cursor: pointer;
-}
+     .add-container img {
+          filter: invert(18%) sepia(80%) saturate(2613%) hue-rotate(191deg) brightness(92%) contrast(101%);
+          cursor: pointer;
+     }
+
 .dark-mode .add-container img {
      filter: invert(87%) sepia(14%) saturate(436%) hue-rotate(192deg) brightness(106%) contrast(90%);
 }
@@ -49,17 +50,53 @@ body {
      display: none;
 }
 
-     .widgets a {
-          text-decoration: none;
-          color: #005393;
-     }
+.widgets a {
+     text-decoration: none;
+     color: #005393;
+}
 
-     .widgets .widget {
-          background: #dce5f2;
-          box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
-          border-radius: 32px;
-          padding: 30px 60px 20px 60px;
-     }
+.widgets .widget {
+     background: #dce5f2;
+     box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
+     border-radius: 32px;
+     padding: 30px 60px 20px 60px;
+}
+.input-title-style {
+     font-family: 'IBM Plex Mono';
+     font-style: normal;
+     font-weight: 600;
+     font-size: 14px;
+     line-height: 18px;
+     color: #005393;
+     background: transparent;
+     border: 0px;
+     border-bottom: 1px solid #005393;
+}
+
+input::placeholder {
+     color: #005393;
+}
+
+textarea::placeholder {
+     color: #005393;
+}
+
+.input-description-style {
+     font-family: 'IBM Plex Mono';
+     font-style: normal;
+     font-weight: 600;
+     font-size: 14px;
+     line-height: 18px;
+     color: #005393;
+     background: transparent;
+     border: 0px;
+     resize:none;
+     outline: none;
+     width:100%;
+     height:100%;
+     
+}
+
 
 .widget-event-title-container {
      display: flex;
@@ -67,16 +104,17 @@ body {
      justify-content: space-between;
 }
 
-.widget-event-title-container .actions {
-     display: flex;
-     align-items: center;
-     gap: 14px;
-}
+     .widget-event-title-container .actions {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+     }
 
-.widget-event-title-container .actions img {
-     filter: invert(18%) sepia(80%) saturate(2613%) hue-rotate(191deg) brightness(92%) contrast(101%);
-     cursor: pointer;
-}
+          .widget-event-title-container .actions img {
+               filter: invert(18%) sepia(80%) saturate(2613%) hue-rotate(191deg) brightness(92%) contrast(101%);
+               cursor: pointer;
+          }
+
 .dark-mode .widget-event-title-container .actions img {
      filter: invert(87%) sepia(14%) saturate(436%) hue-rotate(192deg) brightness(106%) contrast(90%);
 }
@@ -86,6 +124,15 @@ body {
      padding: 10px;
      box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
      border-radius: 32px;
+}
+
+.publish-button {
+     text-align: center;
+     font-family: 'IBM Plex Mono';
+     font-style: normal;
+     font-weight: 700;
+     font-size: 14px;
+     line-height: 18px;
      color: #005393;
 }
 
@@ -127,7 +174,6 @@ body {
      background: #DCE5F2;
      box-shadow: -5px 5px 10px rgba(198, 206, 218, 0.2), 5px -5px 10px rgba(198, 206, 218, 0.2), -5px -5px 10px rgba(242, 252, 255, 0.9), 5px 5px 13px rgba(198, 206, 218, 0.9), inset 1px 1px 2px rgba(242, 252, 255, 0.3), inset -1px -1px 2px rgba(198, 206, 218, 0.5);
      border-radius: 32px;
-     color: #005393;
 }
 
 .widgets .widget .widget-event-box-content {
@@ -141,7 +187,6 @@ body {
      border-radius: 10px;
      padding-left: 16px;
      padding-right: 16px;
-     color: #005393;
 }
 
 .dark-mode .widget {
@@ -177,4 +222,25 @@ body {
      background: #23334A !important;
      box-shadow: 1px 1px 2px rgba(42, 61, 89, 0.3), -1px -1px 2px rgba(28, 41, 59, 0.5), inset -8px 8px 16px rgba(28, 41, 59, 0.2), inset 8px -8px 16px rgba(28, 41, 59, 0.2), inset -8px -8px 16px rgba(42, 61, 89, 0.9), inset 8px 8px 20px rgba(28, 41, 59, 0.9) !important;
      color: #f2f2f2 !important;
+}
+
+.dark-mode .input-title-style {
+     color: #DCE5F2;
+     border-bottom: 1px solid #DCE5F2;
+}
+
+.dark-mode input::placeholder {
+     color: #DCE5F2;
+}
+
+.dark-mode textarea::placeholder {
+     color: #DCE5F2;
+}
+
+.dark-mode .input-description-style {
+     color: #DCE5F2;
+}
+
+.dark-mode .publish-button {
+     color: #DCE5F2;
 }

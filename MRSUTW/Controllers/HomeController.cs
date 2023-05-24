@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MRSUTW.BusinessLogic.Interfaces;
+using MRSUTW.Domain.Entities.Event;
 using MRSUTW.Domain.Entities.Pereche;
 using MRSUTW.Domain.Entities.User;
 using MRSUTW.Models;
@@ -15,13 +16,15 @@ namespace MRSUTW.Controllers
     {
         private readonly ISession _session;
         private readonly IPereche _pereche;
+        private readonly IEvent _event;
 
-        public HomeController()
+          public HomeController()
         {
             var bl = new BusinessLogic.BusinessLogic();
             _session = bl.GetSessionBL();
             _pereche = bl.GetPerecheBL();
-        }
+            _event = bl.GetEventBL();
+          }
 
         // GET: Home
         public ActionResult Index()
@@ -36,7 +39,16 @@ namespace MRSUTW.Controllers
             List<PerecheData> perecheDataList = _pereche.getOrarToday();
             homeData.perecheList = perecheDataList.Select(perecheData => mapper.Map<Pereche>(perecheData)).ToList();
 
-            return View(homeData);
+                config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<EventData, Event>();
+               });
+
+               mapper = config.CreateMapper();
+
+               List<EventData> eventDataList = _event.GetEvents();
+               homeData.eventList = eventDataList.Select(eventData => mapper.Map<Event>(eventData)).ToList();
+
+               return View(homeData);
         }
     }
 }

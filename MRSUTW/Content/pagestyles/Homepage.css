@@ -57,8 +57,21 @@ body {
     height: 65vh;
 }
 
+.event-widget-content{
+     width:fit-content;
+     margin:0 auto;
+}
+
+.event-widget-item {
+     font-family: 'IBM Plex Mono';
+     font-weight: 500;
+     font-size: 14px;
+     line-height: 18px;
+     color: #005393;
+}
+
 .widgets .widget-small {
-    height: calc(65vh / 2 - 21px);
+     height: calc(65vh / 2 - 21px);
 }
 
 .widgets .widget .widget-title {
@@ -142,4 +155,7 @@ body {
 
 .dark-mode .orar_widget_table tr:first-child td:nth-child(n) {
     color: #DCE5F2;
+}
+.dark-mode .event-widget-item {
+     color: #DCE5F2;
 }

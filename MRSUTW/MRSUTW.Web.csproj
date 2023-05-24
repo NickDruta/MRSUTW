@@ -133,6 +133,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\pagestyles\AdminEvents.css" />
     <Content Include="Content\pagestyles\AdminHome.css" />
+    <Content Include="Content\pagestyles\AdminItemEvent.css" />
     <Content Include="Content\pagestyles\AdminUsers.css" />
     <Content Include="Content\pagestyles\Events.css" />
     <Content Include="Content\pagestyles\Header.css" />
@@ -224,7 +225,9 @@
     <Compile Include="Controllers\AdminEventsController.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
     <Compile Include="Controllers\AdminPerechiController.cs" />
+    <Compile Include="Controllers\AdminItemEventController.cs" />
     <Compile Include="Controllers\AdminUsersController.cs" />
+    <Compile Include="Controllers\EventItemController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NotFoundController.cs" />
@@ -291,6 +294,8 @@
     <Content Include="Views\NotFound\Index.cshtml" />
     <Content Include="Views\AdminEvents\Index.cshtml" />
     <Content Include="Views\AdminPerechi\Index.cshtml" />
+    <Content Include="Views\AdminItemEvent\Index.cshtml" />
+    <Content Include="Views\EventItem\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
