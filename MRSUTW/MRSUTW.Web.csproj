@@ -224,6 +224,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminEventsController.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
+    <Compile Include="Controllers\AdminItemPerecheController.cs" />
     <Compile Include="Controllers\AdminPerechiController.cs" />
     <Compile Include="Controllers\AdminItemEventController.cs" />
     <Compile Include="Controllers\AdminUsersController.cs" />
@@ -242,8 +243,10 @@
     </Compile>
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\HomeData.cs" />
+    <Compile Include="Models\Marks.cs" />
     <Compile Include="Models\Pereche.cs" />
     <Compile Include="Models\ProfileData.cs" />
+    <Compile Include="Models\RegisterData.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -296,6 +299,7 @@
     <Content Include="Views\AdminPerechi\Index.cshtml" />
     <Content Include="Views\AdminItemEvent\Index.cshtml" />
     <Content Include="Views\EventItem\Index.cshtml" />
+    <Content Include="Views\AdminItemPereche\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

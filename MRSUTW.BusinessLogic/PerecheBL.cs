@@ -26,6 +26,21 @@ namespace MRSUTW.BusinessLogic
             return GetPerechiAction();
         }
 
+        public void AddPereche(PerecheData p)
+        {
+            AddPerecheAction(p);
+        }
+
+        public void EditPereche(PerecheData p)
+        {
+            EditPerecheAction(p);
+        }
+
+        public List<PerecheData> RemovePerecheById(int id)
+        {
+            return RemovePerecheByIdAction(id);
+        }
+
         public List<PerecheData> getRegister()
         {
             return getRegisterAction();

@@ -1,0 +1,139 @@
+﻿@{
+    Layout = null;
+}
+@using System.Web.Optimization;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+    <Title>MRSUTW</Title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @Styles.Render("~/styles/profile")
+    @Styles.Render("~/styles/header")
+</head>
+<body>
+    <div class="profile">
+        <button id="switch-mode" class="switch-button"></button>
+
+        @{ Html.RenderPartial("AdminHeader", ""); }
+
+
+        <div class="content">
+            <div class="info">
+                <div class="info-left">
+                    <div class="logo-container"></div>
+                    <div class="info-left-container">
+                            <div class="info-left-container-item">
+                                Obiect: <input name="obiect" id="obiect" />
+                            </div>
+                            <div class="info-left-container-item">
+                                Tip: <input name="tip" id="tip" />
+                            </div>
+                            <div class="info-left-container-item">
+                                Grupa: <input name="grupa" id="grupa" />
+                            </div>
+                    </div>
+                </div>
+                <div class="info-center">
+                    Date pereche
+                </div>
+                <div class="info-right">
+                        <div class="info-right-item">
+                            Start: <input name="start" id="start" value="1/1/2023 8:00:00 AM" />
+                        </div>
+                        <div class="info-right-item">
+                            Sfirsit: <input name="end" id="end" value="5/31/2023 9:30:00 AM" />
+                        </div>
+                        <div class="info-right-item">
+                            Tipul zilei(integer, Luni-0, Duminica-6): <input name="typeofday" id="typeofday" />
+                        </div>
+                        <div class="info-right-item">
+                            Profesor: <input name="profesor" id="profesor" />
+                        </div>
+                        <div class="info-right-item">
+                            Cabinet: <input name="cabinet" id="cabinet" />
+                        </div>
+                        <div class="save-button" id="save-button">
+                            Salveaza
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background-figure" style="left: -20px; bottom: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="left: -90px; bottom: 100px; z-index: -3;"></div>
+    <div class="background-figure" style="left: 100px; bottom: -120px; z-index: -1;"></div>
+    <div class="background-figure" style="right: -20px; top: -40px; z-index: -2;"></div>
+    <div class="background-figure" style="right: -90px; top: 100px; z-index: -1;"></div>
+    <div class="background-figure" style="right: 100px; top: -120px; z-index: -3;"></div>
+    <script>
+        $(document).ready(function () {
+            const mode = localStorage.getItem("mode");
+            if (mode === "darkMode") {
+                $('body').addClass('dark-mode')
+            }
+
+            $('#search-button').click(function () {
+                const data = $('#search-input').val();
+                $.ajax({
+                    url: "/Profile/Search/",
+                    type: "POST",
+                    data: {
+                        searchData: data,
+                    },
+                    success: function (result) {
+                        if (result.redirectUrl) {
+                            window.location.href = result.redirectUrl;
+                        } else {
+                            console.log(result);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+
+            $('#save-button').click(function () {
+                $.ajax({
+                    url: "/AdminItemPereche/Add/",
+                    type: "POST",
+                    data: {
+                        Start: $("#start").val(),
+                        End: $("#end").val(),
+                        TypeOfDay: $("#typeofday").val(),
+                        ObiectType: $("#tip").val(),
+                        Obiect: $("#obiect").val(),
+                        Profesor: $("#profesor").val(),
+                        Grupa: $("#grupa").val(),
+                        Cabinet: $("#cabinet").val(),
+                    },
+                    success: function (result) {
+                        if (result.redirectUrl) {
+                            window.location.href = result.redirectUrl;
+                        } else {
+                            console.log(result);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            })
+        })
+
+        $('#switch-mode').click(function () {
+            $('body').toggleClass('dark-mode');
+            if ($('body').hasClass('dark-mode')) {
+                localStorage.setItem("mode", "darkMode")
+            } else {
+                localStorage.setItem("mode", "whiteMode")
+            }
+        });
+
+    </script>
+</body>
+</html>
+
