@@ -18,5 +18,10 @@ namespace MRSUTW.BusinessLogic
           {
                return new EventBL();
           }
+
+          public IMarks GetMarksBL()
+          {
+               return new MarksBL();
+          }
      }
 }

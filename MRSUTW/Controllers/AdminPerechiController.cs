@@ -38,5 +38,23 @@ namespace MRSUTW.Controllers
 
             return View(perechi);
         }
+
+        public ActionResult Delete(int id)
+        {
+            var userCookie = Request.Cookies["MRSUTW"];
+            if (userCookie == null) { return RedirectToAction("Index", "SignIn"); }
+
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<PerecheData, Pereche>();
+            });
+
+            IMapper mapper = config.CreateMapper();
+
+            List<PerecheData> perechiList = _pereche.RemovePerecheById(id);
+            List<Pereche> perechi = perechiList.Select(perecheData => mapper.Map<Pereche>(perecheData)).ToList();
+
+
+            return View("Index", perechi);
+        }
     }
 }

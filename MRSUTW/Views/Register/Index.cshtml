@@ -2,7 +2,7 @@
      Layout = null;
 }
 @using System.Web.Optimization;
-@model IEnumerable<MRSUTW.Models.Pereche>
+@model MRSUTW.Models.RegisterData
 
 <!DOCTYPE html>
 <html>
@@ -22,9 +22,7 @@
 
           <div class="register-page-container">
                <div class="register-page-selector">
-                    <img src="~/Images/arrow.svg" class="register-page-selector-arrow">
-                    <div class="choice-rectangle">Registru</div>
-                    <img src="~/Images/arrow.svg" class="register-page-selector-arrow-right">
+                    <div class="choice-rectangle" style="margin-left: 20px; margin-right: 20px;">Registru</div>
                </div>
                <table>
                     <thead>
@@ -46,310 +44,66 @@
                          </tr>
                     </thead>
                     <tbody>
-                         <tr>
-                              <td>1</td>
-                              <td>John Smith</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
+                        <tr>
+                            <td>1</td>
+                            <td>Cebotari Nichita</td>
+                            @for (int i = 1; i < 13; i++)
+                            {
+                                if (Model.Marks.Where(m => m.StudentEmail == "nichita.cebotari@isa.utm.md" && m.Start.Day == i && m.Start.Month == 1).Any())
+                                {
+                                    <td>@Model.Marks.Where(m => m.StudentEmail == "nichita.cebotari@isa.utm.md" && m.Start.Day == 1 && m.Start.Month == 1).First().Value</td>
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
+                            }
                          </tr>
-                         <tr>
-                              <td>2</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>3</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>4</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>5</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>6</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>7</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>8</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>9</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>10</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>11</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>12</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>13</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>14</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>15</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>16</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>17</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>18</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
-                         <tr>
-                              <td>19</td>
-                              <td>Jane Doe</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                         </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Druta Nicolae</td>
+                            @for (int i = 1; i < 13; i++)
+                            {
+                                if (Model.Marks.Where(m => m.StudentEmail == "nicolae.druta@isa.utm.md" && m.Start.Day == i && m.Start.Month == 1).Any())
+                                {
+                                    <td>@Model.Marks.Where(m => m.StudentEmail == "nicolae.druta@isa.utm.md" && m.Start.Day == 1 && m.Start.Month == 1).First().Value</td>
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Vladislav Odobescu Dubolear</td>
+                            @for (int i = 1; i < 13; i++)
+                            {
+                                if (Model.Marks.Where(m => m.StudentEmail == "vladislav.odobescu@isa.utm.md" && m.Start.Day == i && m.Start.Month == 1).Any())
+                                {
+                                    <td>@Model.Marks.Where(m => m.StudentEmail == "vladislav.odobescu@isa.utm.md" && m.Start.Day == 1 && m.Start.Month == 1).First().Value</td>
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Lupu Antonio</td>
+                            @for (int i = 1; i < 13; i++)
+                            {
+                                if (Model.Marks.Where(m => m.StudentEmail == "antonio.lupu@isa.utm.md" && m.Start.Day == i && m.Start.Month == 1).Any())
+                                {
+                                    <td>@Model.Marks.Where(m => m.StudentEmail == "antonio.lupu@isa.utm.md" && m.Start.Day == 1 && m.Start.Month == 1).First().Value</td>
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
+                            }
+                        </tr>
                     </tbody>
                </table>
           </div>
@@ -392,6 +146,7 @@
         $('#switch-mode').click(function () {
             $('body').toggleClass('dark-mode');
             if ($('body').hasClass('dark-mode')) {
+
                 localStorage.setItem("mode", "darkMode")
             } else {
                 localStorage.setItem("mode", "whiteMode")

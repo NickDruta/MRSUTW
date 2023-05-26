@@ -34,6 +34,7 @@ body {
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(2, 1fr);
+    position: relative;
 }
 
 .admin-user-widget::-webkit-scrollbar {
@@ -98,6 +99,21 @@ body {
 .user-container-title .actions img {
     filter: invert(18%) sepia(80%) saturate(2613%) hue-rotate(191deg) brightness(92%) contrast(101%);
     cursor: pointer;
+}
+
+.add-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.add-container img {
+    filter: invert(18%) sepia(80%) saturate(2613%) hue-rotate(191deg) brightness(92%) contrast(101%);
+    cursor: pointer;
+}
+
+.dark-mode .add-container img {
+    filter: invert(87%) sepia(14%) saturate(436%) hue-rotate(192deg) brightness(106%) contrast(90%);
 }
 
 .dark-mode .admin-user-widget {

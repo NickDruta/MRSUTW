@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using MRSUTW.BusinessLogic.DBModel;
 using MRSUTW.BusinessLogic.Interfaces;
+using MRSUTW.Domain.Entities.Event;
 using MRSUTW.Domain.Entities.Pereche;
 using MRSUTW.Domain.Entities.User;
 using MRSUTW.Domain.Enums;
@@ -105,6 +108,89 @@ namespace MRSUTW.BusinessLogic.Core
             }
 
             return perechi;
+        }
+
+        public void AddPerecheAction(PerecheData p)
+        {
+            PDbTable pDb = new PDbTable
+            {
+                Id = p.Id,
+                Start = p.Start,
+                End = p.End,
+                TypeOfDay = p.TypeOfDay,
+                WeekType= p.WeekType,
+                ObiectType= p.ObiectType,
+                Obiect= p.Obiect,
+                Profesor= p.Profesor,
+                Grupa= p.Grupa,
+                Cabinet= p.Cabinet,
+            };
+            using (var db = new UserContext())
+            {
+                db.Perechi.Add(pDb);
+                db.SaveChanges();
+            }
+        }
+
+        public void EditPerecheAction(PerecheData p)
+        {
+            using (var db = new UserContext())
+            {
+                var pereche = db.Perechi.Find(p.Id);
+                if (pereche != null)
+                {
+                    pereche.Id = p.Id;
+                    pereche.Start = p.Start;
+                    pereche.End = p.End;
+                    pereche.TypeOfDay = p.TypeOfDay;
+                    pereche.WeekType = p.WeekType;
+                    pereche.ObiectType = p.ObiectType;
+                    pereche.Obiect = p.Obiect;
+                    pereche.Profesor = p.Profesor;
+                    pereche.Grupa = p.Grupa;
+                    pereche.Cabinet = p.Cabinet;
+
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public List<PerecheData> RemovePerecheByIdAction(int id)
+        {
+            using (var db = new UserContext())
+            {
+                var perecheDb = db.Perechi.Find(id);
+                if (perecheDb != null)
+                {
+                    db.Perechi.Remove(perecheDb);
+                    db.SaveChanges();
+                }
+
+                List<PerecheData> perechiList = new List<PerecheData>();
+
+                var perecheDbList = db.Perechi.ToList();
+
+                foreach (var p in perecheDbList)
+                {
+                    var pDb = new PerecheData
+                    {
+                        Id = p.Id,
+                        Start = p.Start,
+                        End = p.End,
+                        TypeOfDay = p.TypeOfDay,
+                        WeekType = p.WeekType,
+                        ObiectType = p.ObiectType,
+                        Obiect = p.Obiect,
+                        Profesor = p.Profesor,
+                        Grupa = p.Grupa,
+                        Cabinet = p.Cabinet,
+                    };
+
+                    perechiList.Add(pDb);
+                }
+
+                return perechiList;
+            }
         }
 
         public List<PerecheData> getRegisterAction()

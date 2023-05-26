@@ -12,6 +12,9 @@ namespace MRSUTW.BusinessLogic.Interfaces
         List<PerecheData> getOrar();
         List<PerecheData> getOrarToday();
         List<PerecheData> GetPerechi();
+        void AddPereche(PerecheData p);
+        void EditPereche(PerecheData p);
+        List<PerecheData> RemovePerecheById(int id);
         List<PerecheData> getRegister();
     }
 }

@@ -20,18 +20,17 @@
         <button id="switch-mode" class="switch-button"></button>
         @{ Html.RenderPartial("AdminHeader", "Perechi"); }
 
-
     <div class="admin-user-widget">
+        <a class="add-container" href="@Url.Action("Index","AdminItemPereche")">
+            <img src="~/Images/add.svg" alt="" />
+        </a>
         @foreach (var u in Model)
         {
             <div class="user-container">
                 <div class="user-container-title">
                     <p style="margin: 0 auto">@u.ObiectType @u.Obiect</p>
                     <div class="actions">
-                        <a href="#">
-                            <img src="~/Images/edit.svg" alt="" />
-                        </a>
-                        <a href="#">
+                        <a href="@Url.Action("Delete", "AdminPerechi", new {id = u.Id})">
                             <img src="~/Images/delete.svg" alt="" />
                         </a>
                     </div>
